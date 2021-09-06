@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe BranchOffice, type: :model do
   # association test
-  # ensure Todo model has a 1:m relationship with the Item model
+  # ensure BranchOffice model has a 1:m relationship with the Item model
   #
   it {should have_many(:colaboradors).dependent(:destroy)}
   #

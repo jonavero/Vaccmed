@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_06_155003) do
+ActiveRecord::Schema.define(version: 2021_09_06_164447) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,25 @@ ActiveRecord::Schema.define(version: 2021_09_06_155003) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["branch_office_id"], name: "index_colaboradors_on_branch_office_id"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "description"
+    t.string "createBy"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "vaccines", force: :cascade do |t|
+    t.string "description"
+    t.string "status"
+    t.string "dose"
+    t.string "typeDose"
+    t.string "createBy"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "edadMinima"
+    t.integer "edadMaxima"
   end
 
   add_foreign_key "colaboradors", "branch_offices"
