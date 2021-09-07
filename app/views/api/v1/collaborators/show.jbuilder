@@ -8,7 +8,7 @@ json.data do
     json.address @collaborator.address
     json.createBy @collaborator.createBy
     json.createdDate @collaborator.created_at
-    json.user @branchOffice do |branch|
+    json.branchOffice @branchOffice do |branch|
 
           json.name branch.name
 
