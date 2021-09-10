@@ -14,8 +14,8 @@ class Api::V1::VaccinesController < ApplicationController
 
   def create
    @vaccine= Vaccine.new(vaccine_params)
-    if @user.save
-      render json: @vaccine, status: :created,location: @vaccine
+    if @vaccine.save
+      render json: @vaccine, status: :created,location: api_v1_vaccine_path(@vaccine)
     else
       render json: @vaccine.errors,status: :unprocessable_entity
     end
@@ -24,15 +24,15 @@ class Api::V1::VaccinesController < ApplicationController
 
   def update
     if @vaccine.update(vaccine_params)
-      render json: @vaccine, status: :created,location: @vaccine
+      render json: @vaccine, status: :created,location: api_v1_vaccine_path(@vaccine)
     else
       render json: @vaccine.errors,status: :unprocessable_entity
     end
   end
 
   def updateStatus
-    if @vaccine.update(status)
-    render json: @vaccine, status: :created, location: @vaccine
+    if @vaccine.update(status_params)
+    render json: @vaccine, status: :created, location: api_v1_vaccine_path(@vaccine)
     else
     render json: @vaccine.errors, status: :unprocessable_entity
     end
@@ -45,7 +45,7 @@ class Api::V1::VaccinesController < ApplicationController
   end
 
   def vaccine_params
-    params.require(:vaccine).permit(:description,:status,:dose,:typeDose,:createBy,:edadMinima,:edadMaxima)
+    params.require(:vaccine).permit(:name,:description,:status,:dose,:typeDose,:createBy,:edadMinima,:edadMaxima)
   end
 
   def status_params

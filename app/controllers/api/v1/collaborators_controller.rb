@@ -10,7 +10,7 @@ class Api::V1::CollaboratorsController < ApplicationController
   end
 
   def show
-    @collaborator =Colaborador.find(params[:id])
+    #@collaborator =Colaborador.find(params[:id])
     @branchOffice= BranchOffice.select(Arel.star).where(Colaborador.arel_table[:id].eq(@collaborator.id)).joins(
         BranchOffice.arel_table.join(Colaborador.arel_table).on(Colaborador.arel_table[:branch_office_id].eq(BranchOffice.arel_table[:id])).join_sources)
   end

@@ -12,6 +12,7 @@ namespace :api do
     resources :branch_offices
     resources :collaborators
     resources :vaccines
+    put '/vaccines/status/:id' => 'vaccines#updateStatus', as: :UpdateStatus
   end
 end
 
