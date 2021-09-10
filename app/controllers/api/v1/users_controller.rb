@@ -7,10 +7,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
-    render json: @user.to_json(:include=>{
-                                        :role =>{only: [:description]},
-                                        :colaborador=> {only: [:names,:surname,:email]}
-                                          })
+    @user= User.joins(:role,:colaborador)
   end
 
   def create

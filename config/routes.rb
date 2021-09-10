@@ -11,6 +11,7 @@ namespace :api do
     resources :roles
     resources :branch_offices
     resources :collaborators
+    resources :vaccines
   end
 end
 
