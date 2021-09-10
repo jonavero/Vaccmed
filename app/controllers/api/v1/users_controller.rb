@@ -7,7 +7,10 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
-    render json: @user
+    render json: @user.to_json(:include=>{
+                                        :role =>{only: [:description]},
+                                        :colaborador=> {only: [:names,:surname,:email]}
+                                          })
   end
 
   def create
@@ -20,7 +23,8 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def current
-     render json: current_user.id
+
+      render json: current_user.as_json(only: %i(id username emailexit))
 
   end
 

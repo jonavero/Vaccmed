@@ -4,7 +4,8 @@ class Api::V1::CollaboratorsController < ApplicationController
   before_action :set_collaborator, only: [:show,:update]
 
   def index
-    @collaborators= Colaborador.all
+    @count= Colaborador.count
+    @collaborators= Colaborador.joins(:branch_office)
 
   end
 
