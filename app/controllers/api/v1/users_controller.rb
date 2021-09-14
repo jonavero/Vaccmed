@@ -7,7 +7,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
-    @user= User.joins(:role,:colaborador)
+    @user= User.joins(:colaborador).find(params[:id])
   end
 
   def create
@@ -34,6 +34,6 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username,:email,:password,:password_confirmation,:createBy,:role_id,:colaborador_id)
+    params.require(:user).permit(:username,:email,:password,:password_confirmation,:createBy,:colaborador_id)
   end
 end

@@ -7,6 +7,7 @@ json.names c.names
 json.surname c.surname
 json.email c.email
 json.centroName c.branch_office.name
+json.role c.role.description
 json.status c.status
     end
 end

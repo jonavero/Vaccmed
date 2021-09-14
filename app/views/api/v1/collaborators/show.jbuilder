@@ -1,18 +1,12 @@
-json.data do
+
+json.object do
 
     json.id @collaborator.id
     json.names @collaborator.names
     json.surname @collaborator.surname
-    json.status @collaborator.status
     json.email @collaborator.email
-    json.address @collaborator.address
-    json.createBy @collaborator.createBy
-    json.createdDate @collaborator.created_at
-    json.branchOffice @branchOffice do |branch|
+    json.centroName @collaborator.branch_office.name
+    json.role @collaborator.role.description
+    json.status @collaborator.status
 
-          json.name branch.name
-
-    end
-
-  end
-
+end

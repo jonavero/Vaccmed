@@ -1,14 +1,12 @@
 json.object do
-  json.user @user do |u|
 
-    json.id u.id
-    json.username u.username
-    json.emailil u.email
-    json.collaboratorNames u.colaborador.names
-    json.collaboratorSurname u.colaborador.surname
-    json.role u.role.description
-    json.createdBy u.createBy
-    json.createdAt u.created_at
 
-  end
+    json.id @user.id
+    json.username @user.username
+    json.emailil @user.email
+    json.collaboratorNames @user.colaborador.names
+    json.collaboratorSurname @user.colaborador.surname
+    json.createdBy @user.createBy
+    json.createdAt @user.created_at
+
 end
