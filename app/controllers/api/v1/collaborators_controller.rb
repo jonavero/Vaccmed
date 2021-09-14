@@ -8,7 +8,6 @@ class Api::V1::CollaboratorsController < ApplicationController
     @collaborators= if params[:names]
                Colaborador.where('"names" ILIKE ?',"%#{params[:names]}%")
 
-
                 else
                Colaborador.joins(:branch_office,:role)
              end

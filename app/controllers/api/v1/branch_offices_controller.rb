@@ -2,8 +2,14 @@ class Api::V1::BranchOfficesController < ApplicationController
  # before_action :authenticate_user, only: [:create,:index,:show,:update]
   before_action :set_branchOffice, only: [:show,:update]
   def index
-    @branchOffices=BranchOffice.all
-    render json: @branchOffices
+    @branchOffices= if params[:name]
+                      @count =BranchOffice.where('"name" ILIKE ?',"%#{params[:name]}%").count
+                      BranchOffice.where('"name" ILIKE ?',"%#{params[:name]}%")
+                    else
+                      @count =BranchOffice.count
+                      BranchOffice.all.order(:id)
+                    end
+
   end
 
   def show
