@@ -8,7 +8,6 @@ json.object do
     json.minimunAge @vaccine.edadMinima
     json.maximunAge @vaccine.edadMaxima
     json.status @vaccine.status
-    json.createDate @vaccine.created_at
 
   end
 end

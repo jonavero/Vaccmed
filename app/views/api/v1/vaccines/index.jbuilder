@@ -5,9 +5,9 @@ json.object do
     json.name v.name
     json.description v.description
     json.dose v.dose
-    json.createDate v.created_at
     json.minimunAge v.edadMinima
     json.maximumAge v.edadMaxima
+    json.createDate v.created_at
     json.status v.status
   end
 
