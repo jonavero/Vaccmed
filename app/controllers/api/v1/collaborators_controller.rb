@@ -4,12 +4,14 @@ class Api::V1::CollaboratorsController < ApplicationController
   before_action :set_collaborator, only: [:show,:update]
 
   def index
-    @count= Colaborador.count
-    @collaborators= if params[:names]
-               Colaborador.where('"names" ILIKE ?',"%#{params[:names]}%")
 
-                else
-               Colaborador.joins(:branch_office,:role)
+    @collaborators= if params[:names]
+                      @count=  Colaborador.where('"names" ILIKE ?',"%#{params[:names]}%").count
+               Colaborador.where('"names" ILIKE ?',"%#{params[:names]}%").paginate(:page => params[:page], :per_page => 1)
+
+                    else
+                      @count= Colaborador.count
+                     Colaborador.joins(:branch_office,:role).paginate(:page => params[:page], :per_page => 1)
              end
 
   end

@@ -16,6 +16,7 @@ gem 'puma', '~> 5.0'
 # Use Active Model has_secure_password
  gem 'bcrypt', '~> 3.1.7'
 
+gem 'will_paginate', '~> 3.1.0'
 gem 'knock', git: 'https://github.com/nsarno/knock', branch: 'master', ref: '9214cd027422df8dc31eb67c60032fbbf8fc100b'
 
 # Use Active Storage variant

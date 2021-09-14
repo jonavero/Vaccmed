@@ -4,10 +4,10 @@ class Api::V1::BranchOfficesController < ApplicationController
   def index
     @branchOffices= if params[:name]
                       @count =BranchOffice.where('"name" ILIKE ?',"%#{params[:name]}%").count
-                      BranchOffice.where('"name" ILIKE ?',"%#{params[:name]}%")
+                      BranchOffice.where('"name" ILIKE ?',"%#{params[:name]}%").paginate(:page => params[:page], :per_page => 2)
                     else
                       @count =BranchOffice.count
-                      BranchOffice.all.order(:id)
+                      BranchOffice.paginate(:page => params[:page], :per_page => 2).order(:id)
                     end
 
   end

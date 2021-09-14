@@ -4,12 +4,14 @@ class Api::V1::VaccinesController < ApplicationController
   before_action :set_vaccine, only: [:show,:update,:updateStatus]
 
   def index
-    @count=Vaccine.count
+
 
     @vaccines= if params[:description]
-                 Vaccine.where('"description" ILIKE ?',"#{params[:description]}%")
-                 else
-                 Vaccine.all
+                 @count=Vaccine.where('"description" ILIKE ?',"#{params[:description]}%").count
+                 Vaccine.where('"description" ILIKE ?',"#{params[:description]}%").paginate(:page => params[:page], :per_page => 2)
+               else
+                 @count=Vaccine.count
+                 Vaccine.paginate(:page => params[:page], :per_page => 2)
                end
   end
 
