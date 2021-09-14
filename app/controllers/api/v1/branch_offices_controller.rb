@@ -2,12 +2,12 @@ class Api::V1::BranchOfficesController < ApplicationController
  # before_action :authenticate_user, only: [:create,:index,:show,:update]
   before_action :set_branchOffice, only: [:show,:update]
   def index
-    @branchOffices= if params[:name]
-                      @count =BranchOffice.where('"name" ILIKE ?',"%#{params[:name]}%").count
-                      BranchOffice.where('"name" ILIKE ?',"%#{params[:name]}%").paginate(:page => params[:page], :per_page => 2)
+    @branchOffices= if params[:search]
+                      @count =BranchOffice.where('"name" ILIKE ?',"%#{params[:search]}%").count
+                      BranchOffice.where('"name" ILIKE ?',"%#{params[:search]}%").paginate(:page => params[:skip], :per_page => 2)
                     else
                       @count =BranchOffice.count
-                      BranchOffice.paginate(:page => params[:page], :per_page => 2).order(:id)
+                      BranchOffice.paginate(:page => params[:skip], :per_page => 2).order(:id)
                     end
 
   end

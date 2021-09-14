@@ -6,12 +6,12 @@ class Api::V1::VaccinesController < ApplicationController
   def index
 
 
-    @vaccines= if params[:description]
-                 @count=Vaccine.where('"description" ILIKE ?',"#{params[:description]}%").count
-                 Vaccine.where('"description" ILIKE ?',"#{params[:description]}%").paginate(:page => params[:page], :per_page => 2)
+    @vaccines= if params[:search]
+                 @count=Vaccine.where('"description" ILIKE ?',"#{params[:search]}%").count
+                 Vaccine.where('"description" ILIKE ?',"#{params[:search]}%").paginate(:page => params[:skip], :per_page => 2)
                else
                  @count=Vaccine.count
-                 Vaccine.paginate(:page => params[:page], :per_page => 2)
+                 Vaccine.paginate(:page => params[:skip], :per_page => 2)
                end
   end
 

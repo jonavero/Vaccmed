@@ -5,13 +5,13 @@ class Api::V1::CollaboratorsController < ApplicationController
 
   def index
 
-    @collaborators= if params[:names]
-                      @count=  Colaborador.where('"names" ILIKE ?',"%#{params[:names]}%").count
-               Colaborador.where('"names" ILIKE ?',"%#{params[:names]}%").paginate(:page => params[:page], :per_page => 1)
+    @collaborators= if params[:search]
+                      @count=  Colaborador.where('"names" ILIKE ?',"%#{params[:search]}%").count
+               Colaborador.where('"names" ILIKE ?',"%#{params[:search]}%").paginate(:page => params[:skip], :per_page => 1)
 
                     else
                       @count= Colaborador.count
-                     Colaborador.joins(:branch_office,:role).paginate(:page => params[:page], :per_page => 1)
+                     Colaborador.joins(:branch_office,:role).paginate(:page => params[:skip], :per_page => 1)
              end
 
   end

@@ -1,4 +1,3 @@
-json.object do
  json.totalCount @count
   json.vaccines @vaccines do |v|
     json.id v.id
@@ -11,4 +10,3 @@ json.object do
     json.status v.status
   end
 
-end
