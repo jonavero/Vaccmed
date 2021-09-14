@@ -5,9 +5,13 @@ class Api::V1::CollaboratorsController < ApplicationController
 
   def index
     @count= Colaborador.count
-    @collaborators= Colaborador.joins(:branch_office,:role)
+    @collaborators= if params[:names]
+               Colaborador.where('"names" ILIKE ?',"%#{params[:names]}%")
 
 
+                else
+               Colaborador.joins(:branch_office,:role)
+             end
 
   end
 

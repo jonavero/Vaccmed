@@ -5,7 +5,12 @@ class Api::V1::VaccinesController < ApplicationController
 
   def index
     @count=Vaccine.count
-  @vaccines= Vaccine.all
+
+    @vaccines= if params[:description]
+                 Vaccine.where('"description" ILIKE ?',"#{params[:description]}%")
+                 else
+                 Vaccine.all
+               end
   end
 
   def show
