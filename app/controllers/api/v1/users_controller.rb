@@ -21,7 +21,11 @@ class Api::V1::UsersController < ApplicationController
 
   def current
 
-      render json: current_user.as_json(only: %i(id username emailexit))
+    @current_user = User.joins(colaborador:[:role]).find_by(:id=> current_user.id)
+    # render json: @current_user.as_json(only: %i(id username email colaborador_id))
+      #render json: current_user.joins("INNER JOIN colaboradors ON colaboradors.id= current_user.colaborador_id")
+
+
 
   end
 
@@ -34,6 +38,6 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username,:email,:password,:password_confirmation,:createBy,:colaborador_id)
+    params.require(:user).permit(:username,:email,:password,:password_confirmation,:createBy,:colaborador_id,:role_id)
   end
 end

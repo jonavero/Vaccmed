@@ -1,5 +1,4 @@
 
-json.object  do
  json.totalColaborators @count
   json.collaborators @collaborators do |c|
 json.id c.id
@@ -10,5 +9,4 @@ json.centroName c.branch_office.name
 json.role c.role.description
 json.status c.status
     end
-end
 

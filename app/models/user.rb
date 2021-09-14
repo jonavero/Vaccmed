@@ -5,7 +5,7 @@ class User < ApplicationRecord
   before_save :downcase_email
   validates_presence_of :email,:username,:colaborador_id,:createBy
   validates_uniqueness_of :email,:username, :message=> "EL valor insertado ya existe, campo unico"
-  validates :password_digest, presence: true, length: {minimum: 8}
+  validates :password, presence: true, length: {minimum: 8}
   private
 
   def downcase_email

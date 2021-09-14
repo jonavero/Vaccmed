@@ -1,4 +1,3 @@
-json.object do
   json.totalCenter @count
   json.centers @branchOffices do |b|
     json.id b.id
@@ -13,4 +12,3 @@ json.object do
   end
 
 
-end

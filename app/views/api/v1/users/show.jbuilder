@@ -1,6 +1,4 @@
 json.object do
-
-
     json.id @user.id
     json.username @user.username
     json.emailil @user.email
