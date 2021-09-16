@@ -1,4 +1,4 @@
-json.object do
+json.data do
   json.id @current_user.id
   json.username @current_user.username
   json.name @current_user.colaborador.names

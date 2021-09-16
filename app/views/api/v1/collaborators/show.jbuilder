@@ -1,5 +1,5 @@
 
-json.object do
+json.data do
 
     json.id @collaborator.id
     json.names @collaborator.names

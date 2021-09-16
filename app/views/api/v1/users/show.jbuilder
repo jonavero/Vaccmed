@@ -1,7 +1,7 @@
-json.object do
+json.data do
     json.id @user.id
     json.username @user.username
-    json.emailil @user.email
+    json.email @user.email
     json.collaboratorNames @user.colaborador.names
     json.collaboratorSurname @user.colaborador.surname
     json.createdBy @user.createBy

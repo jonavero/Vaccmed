@@ -1,6 +1,6 @@
 
- json.totalColaborators @count
-  json.collaborators @collaborators do |c|
+json.totalColaborators @count
+ json.collaborators @collaborators do |c|
 json.id c.id
 json.names c.names
 json.surname c.surname

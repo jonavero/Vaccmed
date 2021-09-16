@@ -1,4 +1,4 @@
-json.object do
+
   json.vaccine do
     json.id @vaccine.id
     json.name @vaccine.name
@@ -10,4 +10,3 @@ json.object do
     json.status @vaccine.status
 
   end
-end
