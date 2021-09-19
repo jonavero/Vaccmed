@@ -7,11 +7,11 @@ class Api::V1::CollaboratorsController < ApplicationController
 
     @collaborators= if params[:search]
                       @count=  Colaborador.where('"names" ILIKE ?',"%#{params[:search]}%").count
-               Colaborador.where('"names" ILIKE ?',"%#{params[:search]}%").paginate(:page => params[:skip], :per_page => 1)
+               Colaborador.where('"names" ILIKE ?',"%#{params[:search]}%").paginate(:page => params[:skip], :per_page => params[:maxCount])
 
                     else
                       @count= Colaborador.count
-                     Colaborador.joins(:branch_office,:role).paginate(:page => params[:skip], :per_page => 1)
+                     Colaborador.joins(:branch_office,:role).paginate(:page => params[:skip], :per_page => params[:maxCount])
              end
 
   end

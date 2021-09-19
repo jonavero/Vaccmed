@@ -8,10 +8,10 @@ class Api::V1::VaccinesController < ApplicationController
 
     @vaccines= if params[:search]
                  @count=Vaccine.where('"description" ILIKE ?',"#{params[:search]}%").count
-                 Vaccine.where('"description" ILIKE ?',"#{params[:search]}%").paginate(:page => params[:skip], :per_page => 2)
+                 Vaccine.where('"description" ILIKE ?',"#{params[:search]}%").paginate(:page => params[:skip], :per_page => params[:maxCount])
                else
                  @count=Vaccine.count
-                 Vaccine.paginate(:page => params[:skip], :per_page => 2)
+                 Vaccine.paginate(:page => params[:skip], :per_page => params[:maxCount])
                end
   end
 

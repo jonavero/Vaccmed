@@ -9,11 +9,12 @@ namespace :api do
     get 'users/current' => 'users#current'
     resources :users
     resources :roles
+    get '/rol/list' => 'roles#index'
     resources :branch_offices
     resources :collaborators
     resources :vaccines
     put '/vaccines/status/:id' => 'vaccines#updateStatus', as: :UpdateStatus
-    get '/center/list' => 'branch_offices#showByStatus'
+    get '/branchOffice/list' => 'branch_offices#showByStatus'
   end
 end
 
