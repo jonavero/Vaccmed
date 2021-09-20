@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'patients/index'
+  get 'patients/show'
+  get 'patients/create'
+  get 'patients/update'
 namespace :api do
   namespace :v1 do
    #ruta mensaje
@@ -30,6 +34,9 @@ namespace :api do
 
     # Rutas para Tutores
      resources :tutors
+
+    #rutas para pacientes
+    resources :patients
   end
 end
 
