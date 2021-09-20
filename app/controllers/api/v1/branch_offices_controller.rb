@@ -1,5 +1,5 @@
 class Api::V1::BranchOfficesController < ApplicationController
- # before_action :authenticate_user, only: [:create,:index,:show,:update]
+  before_action :authenticate_user, only: [:create,:index,:show,:update]
   before_action :set_branchOffice, only: [:show,:update]
   def index
     @branchOffices= if params[:search]
@@ -25,7 +25,8 @@ class Api::V1::BranchOfficesController < ApplicationController
   def create
     @branchOffice = BranchOffice.new(branchOffice_params)
     if @branchOffice.save
-      render json: @branchOffice, status: :created, location: api_v1_branch_office_path(@branchOffice)
+      @mensaje='Registro Creado'
+      render 'mensaje',status: :created
     else
       render json: @branchOffice.errors,status:  :unprocessable_entity
     end
@@ -33,7 +34,8 @@ class Api::V1::BranchOfficesController < ApplicationController
 
   def update
     if @branchOffice.update(branchOffice_params)
-      render json: @branchOffice, status: :created,location: api_v1_branch_office_path(@branchOffice)
+      @mensaje='Registro Actualizado'
+      render 'mensaje',status: :created
     else
 
       render json: @branchOffice.errors,status: :unprocessable_entity

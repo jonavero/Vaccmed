@@ -22,7 +22,8 @@ class Api::V1::VaccinesController < ApplicationController
   def create
    @vaccine= Vaccine.new(vaccine_params)
     if @vaccine.save
-      render json: @vaccine, status: :created,location: api_v1_vaccine_path(@vaccine)
+      @mensaje='Registro Creado'
+      render 'mensaje',status: :created
     else
       render json: @vaccine.errors,status: :unprocessable_entity
     end
@@ -31,7 +32,8 @@ class Api::V1::VaccinesController < ApplicationController
 
   def update
     if @vaccine.update(vaccine_params)
-      render json: @vaccine, status: :created,location: api_v1_vaccine_path(@vaccine)
+      @mensaje='Registro Actualizado'
+      render 'mensaje',status: :created
     else
       render json: @vaccine.errors,status: :unprocessable_entity
     end
@@ -39,7 +41,8 @@ class Api::V1::VaccinesController < ApplicationController
 
   def updateStatus
     if @vaccine.update(status_params)
-    render json: @vaccine, status: :created, location: api_v1_vaccine_path(@vaccine)
+      @mensaje='Registro Actualizado'
+      render 'mensaje',status: :created
     else
     render json: @vaccine.errors, status: :unprocessable_entity
     end

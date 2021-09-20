@@ -27,7 +27,9 @@ class Api::V1::CollaboratorsController < ApplicationController
     @collaborator =Colaborador.new(collaborator_params)
 
     if @collaborator.save
-      render json: @collaborator, status: :created,location: api_v1_collaborator_path(@collaborator)
+      #render json: @collaborator, status: :created,location: api_v1_collaborator_path(@collaborator)
+      @mensaje='Registro Creado'
+      render 'mensaje',status: :created
     else
       render json: params.inspect
     end
@@ -36,7 +38,8 @@ class Api::V1::CollaboratorsController < ApplicationController
   def update
 
     if @collaborator.update(collaborator_params)
-      render json: @collaborator, status: :created,location: api_v1_collaborator_path(@collaborator)
+      @mensaje='Registro Actualizado'
+      render 'mensaje',status: :created
     else
       render json: @collaborator.errors,status: :unprocessable_entity
     end
