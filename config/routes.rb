@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'patients/index'
-  get 'patients/show'
-  get 'patients/create'
-  get 'patients/update'
 namespace :api do
   namespace :v1 do
    #ruta mensaje
@@ -37,6 +33,11 @@ namespace :api do
 
     #rutas para pacientes
     resources :patients
+
+    #rutas relationship (Parentesco)
+    get '/relationships' => 'relationships#index'
+    post '/relationships' => 'relationships#create'
+
   end
 end
 
