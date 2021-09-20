@@ -1,6 +1,6 @@
 class  Api::V1:: PatientsController < ApplicationController
   before_action :set_patient, only: [:show,:update]
-  before_action :authenticate_user, only: [:create,:index,:show,:update]
+  before_action :authenticate_user, only: [:create,:index,:show,:update,:PatientTutor,:showForName]
   def index
     @patients= if params[:search]
                @count =Patient.where('"name" ILIKE ?',"%#{params[:search]}%").count

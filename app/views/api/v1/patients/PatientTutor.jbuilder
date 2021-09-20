@@ -1,5 +1,5 @@
 json.listTutors @patientTutor do |p|
-  json.id p.id
+  json.id p.tutor.id
   json.name p.tutor.name
   json.surname p.tutor.surname
   json.documentType p.tutor.documentType
