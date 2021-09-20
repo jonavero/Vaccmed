@@ -15,6 +15,23 @@ class  Api::V1:: PatientsController < ApplicationController
 
   end
 
+
+  def PatientTutor
+    @patientTutor = if params[:id]
+                     Dependent.joins(:patient, :tutor,:relationship).where('"patient_id" = ?',params[:id] )
+                   else
+
+                   end
+
+  end
+
+  def showForName
+    @patientsName = if params[:search]
+                      Patient.where('"name" ILIKE ?',"%#{params[:search]}%").paginate(:page => params[:skip], :per_page => params[:maxCount])
+                    end
+  end
+
+
   def create
 
     @patient= Patient.new(patients_params)

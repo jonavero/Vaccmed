@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
 namespace :api do
   namespace :v1 do
    #ruta mensaje
@@ -30,13 +31,21 @@ namespace :api do
 
     # Rutas para Tutores
      resources :tutors
+    get '/tutor/dependent' => 'tutors#tutorDepend'
 
     #rutas para pacientes
     resources :patients
+    get '/patient/tutor' => 'patients#PatientTutor'
+    get '/patient/listForName' => 'patients#showForName'
+
+
 
     #rutas relationship (Parentesco)
     get '/relationships' => 'relationships#index'
     post '/relationships' => 'relationships#create'
+
+   #rutas para dependientes
+   post '/dependent' => 'dependets#create'
 
   end
 end

@@ -15,6 +15,15 @@ class Api::V1::TutorsController < ApplicationController
 
   end
 
+  def tutorDepend
+    @tutorDepend = if params[:id]
+                     Dependent.joins(:patient, :tutor).where('"tutor_id" = ?',params[:id] )
+                   else
+
+                   end
+
+  end
+
   def create
 
     @tutor= Tutor.new(tutors_params)

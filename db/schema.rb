@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_20_031508) do
+ActiveRecord::Schema.define(version: 2021_09_20_035229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,18 @@ ActiveRecord::Schema.define(version: 2021_09_20_031508) do
     t.bigint "role_id"
     t.index ["branch_office_id"], name: "index_colaboradors_on_branch_office_id"
     t.index ["role_id"], name: "index_colaboradors_on_role_id"
+  end
+
+  create_table "dependents", force: :cascade do |t|
+    t.bigint "patient_id", null: false
+    t.bigint "tutor_id", null: false
+    t.bigint "relationship_id", null: false
+    t.string "createdBy"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["patient_id"], name: "index_dependents_on_patient_id"
+    t.index ["relationship_id"], name: "index_dependents_on_relationship_id"
+    t.index ["tutor_id"], name: "index_dependents_on_tutor_id"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -112,6 +124,9 @@ ActiveRecord::Schema.define(version: 2021_09_20_031508) do
 
   add_foreign_key "colaboradors", "branch_offices"
   add_foreign_key "colaboradors", "roles"
+  add_foreign_key "dependents", "patients"
+  add_foreign_key "dependents", "relationships"
+  add_foreign_key "dependents", "tutors"
   add_foreign_key "users", "colaboradors"
   add_foreign_key "users", "roles"
 end
