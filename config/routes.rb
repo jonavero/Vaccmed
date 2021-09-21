@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
 
+  get 'appointments/index'
+  get 'appointments/show'
+  get 'appointments/create'
+  get 'appointments/update'
+  get 'appointments/destroy'
 namespace :api do
   namespace :v1 do
    #ruta mensaje
@@ -47,6 +52,9 @@ namespace :api do
    #rutas para dependientes
    post '/dependent' => 'dependets#create'
 
+    #rutas para Appointment (Citas)
+     resources :appointments
+    #post '/appointments' => 'appointments#create'
   end
 end
 

@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_20_035229) do
+ActiveRecord::Schema.define(version: 2021_09_21_031637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointment_details", force: :cascade do |t|
+    t.bigint "appointment_id", null: false
+    t.bigint "vaccine_id", null: false
+    t.string "status"
+    t.string "createdBy"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["appointment_id"], name: "index_appointment_details_on_appointment_id"
+    t.index ["vaccine_id"], name: "index_appointment_details_on_vaccine_id"
+  end
+
+  create_table "appointments", force: :cascade do |t|
+    t.bigint "branch_office_id", null: false
+    t.bigint "patient_id", null: false
+    t.bigint "tutor_id", null: false
+    t.string "status"
+    t.string "createdBy"
+    t.datetime "cancelAt"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["branch_office_id"], name: "index_appointments_on_branch_office_id"
+    t.index ["patient_id"], name: "index_appointments_on_patient_id"
+    t.index ["tutor_id"], name: "index_appointments_on_tutor_id"
+  end
 
   create_table "branch_offices", force: :cascade do |t|
     t.string "name"
@@ -122,6 +147,11 @@ ActiveRecord::Schema.define(version: 2021_09_20_035229) do
     t.string "name"
   end
 
+  add_foreign_key "appointment_details", "appointments"
+  add_foreign_key "appointment_details", "vaccines"
+  add_foreign_key "appointments", "branch_offices"
+  add_foreign_key "appointments", "patients"
+  add_foreign_key "appointments", "tutors"
   add_foreign_key "colaboradors", "branch_offices"
   add_foreign_key "colaboradors", "roles"
   add_foreign_key "dependents", "patients"
