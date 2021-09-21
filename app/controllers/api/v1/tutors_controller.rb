@@ -28,8 +28,7 @@ class Api::V1::TutorsController < ApplicationController
 
     @tutor= Tutor.new(tutors_params)
     if @tutor.save
-      @mensaje='Registro creado'
-      render 'mensaje',status: :created
+      render json: @tutor, status: :created,location: api_v1_tutor_path(@tutor)
     else
       render json: @tutor.errors,status:  :unprocessable_entity
     end
