@@ -2,11 +2,11 @@ class Api::V1::AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show,:update,:destroy]
   def index
     @appointments = if params[:status]
-                      @count= AppointmentDetail.joins(:appointment[:patient, :tutor]).where('"status" = ?',params[:status] )
-                      AppointmentDetail.joins(:appointment[:patient, :tutor]).where('"status" = ?',params[:status] ).paginate(:page => params[:skip], :per_page => params[:maxCount])
+                      @count=  Appointment.joins(:patient,:tutor,:appointment_details ).where('"appointment.status" = ?',params[:status] )
+                      Appointment.joins(:patient,:tutor,:appointment_details ).where('"status" = ?',params[:status] ).paginate(:page => params[:skip], :per_page => params[:maxCount])
                     else
                       @count =Appointment.count
-                      Appointment.joins(:patient,:tutor ).paginate(:page => params[:skip], :per_page => params[:maxCount])
+                      Appointment.joins(:patient,:tutor,:appointment_details ).paginate(:page => params[:skip], :per_page => params[:maxCount]).uniq
                     end
   end
 

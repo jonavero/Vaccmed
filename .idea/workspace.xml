@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6cc75a0e-3946-401d-9cb8-a092c649d117" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/appointments/index.jbuilder" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/appointments/show.jbuilder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c59dce22-242d-4d68-b309-9ca7896a17fd.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c59dce22-242d-4d68-b309-9ca7896a17fd.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c59dce22-242d-4d68-b309-9ca7896a17fd/storage_v2/_src_/database/Vaccmed_development.fXs-Vw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c59dce22-242d-4d68-b309-9ca7896a17fd/storage_v2/_src_/database/Vaccmed_development.fXs-Vw/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/vaccine.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/vaccine.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/appointments_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/appointments_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/api/v1/appointments/index.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/v1/appointments/index.jbuilder" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -91,7 +85,7 @@
         <item name="Vaccmed_development: database" type="6d9b600a:PostgresImplModel$Database" />
         <item name="public: schema" type="a16502c0:PostgresImplModel$Schema" />
         <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="tutors: table" type="a93d6ac6:PostgresImplModel$LocalTable" />
+        <item name="patients: table" type="a93d6ac6:PostgresImplModel$LocalTable" />
       </path>
     </expand>
     <select />
@@ -107,20 +101,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="appointments_controller.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="appointments_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/appointments_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+            <state relative-caret-position="75">
+              <caret line="5" column="87" selection-start-line="5" selection-start-column="87" selection-end-line="5" selection-end-column="87" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.jbuilder" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.jbuilder" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/api/v1/appointments/index.jbuilder">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -266,8 +260,8 @@
         <option value="$PROJECT_DIR$/app/models/vaccine.rb" />
         <option value="$PROJECT_DIR$/app/models/appointment_detail.rb" />
         <option value="$PROJECT_DIR$/app/models/appointment.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/api/v1/appointments_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/api/v1/appointments/index.jbuilder" />
+        <option value="$PROJECT_DIR$/app/controllers/api/v1/appointments_controller.rb" />
       </list>
     </option>
   </component>
@@ -622,12 +616,12 @@
       <workItem from="1631304230505" duration="21718000" />
       <workItem from="1631760633486" duration="510000" />
       <workItem from="1631841813807" duration="7882000" />
-      <workItem from="1632096462256" duration="29972000" />
+      <workItem from="1632096462256" duration="36447000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111462000" />
+    <option name="totallyTimeSpent" value="117937000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="60" y="-11" width="1861" height="1092" extended-state="6" />
@@ -638,8 +632,8 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.40266395" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21355568" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.40266395" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21355568" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.14470145" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32991803" />
@@ -951,17 +945,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/appointments_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/api/v1/appointments/index.jbuilder">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/api/v1/appointments/index.jbuilder">
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/appointments_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        <state relative-caret-position="75">
+          <caret line="5" column="87" selection-start-line="5" selection-start-column="87" selection-end-line="5" selection-end-column="87" />
         </state>
       </provider>
     </entry>
