@@ -32,7 +32,13 @@ class  Api::V1:: PatientsController < ApplicationController
   end
 
   def vaccineCard
+    @mensaje="ID Paciente no especificado"
 
+    if params[:idPatient]
+      @appointment =Appointment.joins(:patient,:tutor,:appointment_details).where('"patient_id"=?',params[:idPatient]).uniq
+    else
+      render 'mensaje'
+    end
   end
 
 

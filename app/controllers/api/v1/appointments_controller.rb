@@ -26,7 +26,6 @@ class Api::V1::AppointmentsController < ApplicationController
     if params[:idPatient]
     @appointment =Appointment.joins(:patient,:tutor,:appointment_details).where('"patient_id"=?',params[:idPatient]).uniq
 
-
     else
       render 'mensaje'
     end

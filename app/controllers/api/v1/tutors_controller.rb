@@ -24,8 +24,17 @@ class Api::V1::TutorsController < ApplicationController
 
   end
 
-  def create
+  def turn
+    @mensaje="Cedula no especificada"
+    if params[:identityCard]
+    @tutor=Tutor.find_by(:identityCard => params[:identityCard])
+    @turn = Appointment.joins(:tutor,:patient).where('tutor_id=? and status=?',@tutor.id,"Pendiente").order(:id)
+    else
+      render 'mensaje'
+    end
+  end
 
+  def create
     @tutor= Tutor.new(tutors_params)
     if @tutor.save
       render json: @tutor, status: :created,location: api_v1_tutor_path(@tutor)

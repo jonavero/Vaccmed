@@ -39,11 +39,13 @@ namespace :api do
     # Rutas para Tutores
      resources :tutors
     get '/tutor/dependent' => 'tutors#tutorDepend'
+    get '/turn' => 'tutors#turn'
 
     #rutas para pacientes
     resources :patients
     get '/patient/tutor' => 'patients#PatientTutor'
     get '/patient/listForName' => 'patients#showForName'
+    get 'vaccine/card' =>'patients#vaccineCard'
 
 
 
