@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_21_031637) do
+ActiveRecord::Schema.define(version: 2021_09_23_170340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,8 +63,10 @@ ActiveRecord::Schema.define(version: 2021_09_21_031637) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "role_id"
+    t.bigint "user_id", default: 7, null: false
     t.index ["branch_office_id"], name: "index_colaboradors_on_branch_office_id"
     t.index ["role_id"], name: "index_colaboradors_on_role_id"
+    t.index ["user_id"], name: "index_colaboradors_on_user_id"
   end
 
   create_table "dependents", force: :cascade do |t|
@@ -119,18 +121,31 @@ ActiveRecord::Schema.define(version: 2021_09_21_031637) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "createdBy"
+    t.bigint "user_id", default: 7, null: false
+    t.index ["user_id"], name: "index_tutors_on_user_id"
+  end
+
+  create_table "user_tutors", force: :cascade do |t|
+    t.bigint "role_id", null: false
+    t.bigint "tutor_id", null: false
+    t.string "identityCard"
+    t.string "email"
+    t.string "password_digest"
+    t.string "createdBy"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["role_id"], name: "index_user_tutors_on_role_id"
+    t.index ["tutor_id"], name: "index_user_tutors_on_tutor_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.bigint "role_id", null: false
-    t.bigint "colaborador_id", null: false
     t.string "username"
     t.string "password_digest"
     t.string "createBy"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email"
-    t.index ["colaborador_id"], name: "index_users_on_colaborador_id"
     t.index ["role_id"], name: "index_users_on_role_id"
   end
 
@@ -154,9 +169,12 @@ ActiveRecord::Schema.define(version: 2021_09_21_031637) do
   add_foreign_key "appointments", "tutors"
   add_foreign_key "colaboradors", "branch_offices"
   add_foreign_key "colaboradors", "roles"
+  add_foreign_key "colaboradors", "users"
   add_foreign_key "dependents", "patients"
   add_foreign_key "dependents", "relationships"
   add_foreign_key "dependents", "tutors"
-  add_foreign_key "users", "colaboradors"
+  add_foreign_key "tutors", "users"
+  add_foreign_key "user_tutors", "roles"
+  add_foreign_key "user_tutors", "tutors"
   add_foreign_key "users", "roles"
 end

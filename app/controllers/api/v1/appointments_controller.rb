@@ -24,8 +24,9 @@ class Api::V1::AppointmentsController < ApplicationController
     @mensaje="ID Paciente no especificado"
 
     if params[:idPatient]
-    @appointment =Appointment.joins(:patient,:tutor,:appointment_details).find_by('"patient_id"=?',params[:idPatient])
-      @detail_appointment =AppointmentDetail.where('"appointment_id"= ?',@appointment.id)
+    @appointment =Appointment.joins(:patient,:tutor,:appointment_details).where('"patient_id"=?',params[:idPatient]).uniq
+
+
     else
       render 'mensaje'
     end

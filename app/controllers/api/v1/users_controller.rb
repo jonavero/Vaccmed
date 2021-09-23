@@ -22,9 +22,14 @@ class Api::V1::UsersController < ApplicationController
 
   def current
 
-    @current_user = User.joins(colaborador:[:role]).find_by(:id=> current_user.id)
-    # render json: @current_user.as_json(only: %i(id username email colaborador_id))
-      #render json: current_user.joins("INNER JOIN colaboradors ON colaboradors.id= current_user.colaborador_id")
+    @current_user = User.joins(:role).find_by(:id=> current_user.id)
+
+    if @current_user.role.description == "Collaborator" || @current_user.role.description == "Admin" ||@current_user.role.description == "Nurse"
+      @current= Colaborador.joins(:user).find_by(:user_id => @current_user.id)
+    else
+      @current= Tutor.joins(:user).find_by(:user_id => @current_user.id)
+      render 'currentTutor'
+    end
 
 
 
@@ -39,6 +44,6 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username,:email,:password,:password_confirmation,:createBy,:colaborador_id,:role_id)
+    params.require(:user).permit(:username,:email,:password,:password_confirmation,:createBy,:role_id)
   end
 end

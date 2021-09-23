@@ -1,5 +1,6 @@
 class Tutor < ApplicationRecord
 has_many :dependents
+belongs_to :user
   VALIDATE_DOCUMENT =['Cedula','Pasaporte']
   VALIDATE_GENDER =['Femenina','Masculino']
   validates :documentType, inclusion: {in:VALIDATE_DOCUMENT}

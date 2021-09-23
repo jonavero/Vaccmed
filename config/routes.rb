@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
 
 
-  get 'appointments/index'
-  get 'appointments/show'
-  get 'appointments/create'
-  get 'appointments/update'
-  get 'appointments/destroy'
+
 namespace :api do
   namespace :v1 do
    #ruta mensaje
@@ -17,7 +13,13 @@ namespace :api do
     get 'users/create'
     post 'user_token' => 'user_token#create'
     get 'users/current' => 'users#current'
+    get '/loginPatient' => 'users#current'
+    get '/login' => 'users#current'
+
+
     resources :users
+    resources :user_tutors
+
 
     #rutas para roles
     resources :roles

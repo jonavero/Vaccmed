@@ -1,10 +1,9 @@
 json.data do
-  json.id @current_user.id
-  json.username @current_user.username
-  json.name @current_user.colaborador.names
-  json.email @current_user.email
-  json.role @current_user.colaborador.role.description
-  json.nameCenter @current_user.colaborador.branch_office.name
-
+  json.id @current.id
+  json.name @current.names
+  json.username @current.surname
+  json.email @current.email
+  json.nameCenter @current.branch_office.name
+  json.role @current.role.description
 
 end

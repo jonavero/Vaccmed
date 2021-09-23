@@ -1,6 +1,7 @@
 class Colaborador < ApplicationRecord
   belongs_to :branch_office
   belongs_to :role
+  belongs_to :user
 
   VALID_STATUS=['Active','Inactive']
   validates :status, inclusion: {in:VALID_STATUS}

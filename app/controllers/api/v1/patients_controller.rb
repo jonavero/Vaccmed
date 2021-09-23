@@ -31,6 +31,10 @@ class  Api::V1:: PatientsController < ApplicationController
                     end
   end
 
+  def vaccineCard
+
+  end
+
 
   def create
 
