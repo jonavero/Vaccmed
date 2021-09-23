@@ -11,11 +11,10 @@ class Api::V1::AppointmentsController < ApplicationController
   end
 
   def show
+          @detail_appointment = AppointmentDetail.where('"appointment_id"= ?',@appointment.id)
   end
 
   def create
-     # @appointment= Appointment.new
-     # @appointment.appointment_details.build
       @appointment =Appointment.new(params_appointment)
     if @appointment.save
       render json: @appointment, status: :created, location: api_v1_appointment_path(@appointment)
@@ -25,7 +24,7 @@ class Api::V1::AppointmentsController < ApplicationController
   end
 
   def update
-
+    @appointment=Appointment.find(params[:id])
     if @appointment.update(params_appointment)
       render json: @appointment, status: :created, location: api_v1_appointment_path(@appointment)
     else
