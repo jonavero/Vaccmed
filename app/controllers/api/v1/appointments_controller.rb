@@ -2,7 +2,7 @@ class Api::V1::AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show,:update,:destroy]
   def index
     @appointments = if params[:status]
-                      @count=  Appointment.joins(:patient,:tutor,:appointment_details ).where('"appointment.status" = ?',params[:status] )
+                      @count=  Appointment.joins(:patient,:tutor,:appointment_details ).where('"appointment.status" = ?',params[:status] ).count
                       Appointment.joins(:patient,:tutor,:appointment_details ).where('"status" = ?',params[:status] ).paginate(:page => params[:skip], :per_page => params[:maxCount])
                     else
                       @count =Appointment.count
@@ -11,7 +11,31 @@ class Api::V1::AppointmentsController < ApplicationController
   end
 
   def show
-          @detail_appointment = AppointmentDetail.where('"appointment_id"= ?',@appointment.id)
+
+          @detail_appointment =
+              if params[:status]
+                AppointmentDetail.where('"appointment_id"= ? and "status"= ?',@appointment.id,params[:status])
+              else
+                AppointmentDetail.where('"appointment_id"= ?',@appointment.id)
+              end
+  end
+
+  def showVaccineList
+    @mensaje="ID Paciente no especificado"
+
+    if params[:idPatient]
+    @appointment =Appointment.joins(:patient,:tutor,:appointment_details).find_by('"patient_id"=?',params[:idPatient])
+      @detail_appointment =AppointmentDetail.where('"appointment_id"= ?',@appointment.id)
+    else
+      render 'mensaje'
+    end
+
+
+  end
+
+  def counterAppointment
+    @countComplete = Appointment.where('"status" =?',"Completada").count
+    @countPending=Appointment.where('"status" =?',"Pendiente").count
   end
 
   def create
@@ -22,6 +46,8 @@ class Api::V1::AppointmentsController < ApplicationController
       render json: @appointment.errors, status: :unprocessable_entity
     end
   end
+
+
 
   def update
     @appointment=Appointment.find(params[:id])

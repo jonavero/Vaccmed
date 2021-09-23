@@ -55,6 +55,9 @@ namespace :api do
     #rutas para Appointment (Citas)
      resources :appointments
     #post '/appointments' => 'appointments#create'
+   get '/appointment/counter' => 'appointments#counterAppointment'
+    get '/vaccine/list' => 'appointments#showVaccineList'
+
   end
 end
 
