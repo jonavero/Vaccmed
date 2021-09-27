@@ -16,10 +16,11 @@ class Api::V1::TutorsController < ApplicationController
   end
 
   def tutorDepend
+    @mensaje="ID del tutor no especificado"
     @tutorDepend = if params[:id]
                      Dependent.joins(:patient, :tutor).where('"tutor_id" = ?',params[:id] )
                    else
-
+                  render 'mensaje'
                    end
 
   end

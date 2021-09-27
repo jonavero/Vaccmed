@@ -24,6 +24,8 @@ namespace :api do
     #rutas para roles
     resources :roles
     get '/rol/list' => 'roles#index'
+    get '/role/list' => 'roles#index'
+
 
     #rutas para Sucursales
     resources :branch_offices

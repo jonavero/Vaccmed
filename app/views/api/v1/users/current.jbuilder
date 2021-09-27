@@ -1,4 +1,4 @@
-json.data do
+json.user do
   json.id @current.id
   json.name @current.names
   json.username @current.surname
