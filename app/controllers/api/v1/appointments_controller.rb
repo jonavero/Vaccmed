@@ -47,6 +47,25 @@ class Api::V1::AppointmentsController < ApplicationController
   end
 
 
+  def tutorAppointment
+    @mensaje="ID Tutor no especificado"
+    if params[:idTutor]
+      if params[:search] || params[:status]
+        @count= Appointment.joins(:tutor,:patient).where('"tutor_id" = ? and "status"=?', params[:idTutor],params[:status]).count
+
+        @appointments = Appointment.joins(:tutor,:patient).where('"tutor_id" = ? and "status"=?', params[:idTutor],params[:status]).paginate(:page => params[:skip], :per_page => params[:maxCount]).order(:id)
+      else
+        @count= Appointment.joins(:tutor,:patient).where('tutor_id = ?', params[:idTutor]).count
+        @appointments = Appointment.joins(:tutor,:patient).where('tutor_id = ?', params[:idTutor]).paginate(:page => params[:skip], :per_page => params[:maxCount]).order(:id)
+      end
+
+
+    else
+      render 'mensaje'
+    end
+  end
+
+
 
   def counterAppointment
     @countComplete = Appointment.where('"status" =?',"Completada").count
