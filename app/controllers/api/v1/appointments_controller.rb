@@ -33,6 +33,21 @@ class Api::V1::AppointmentsController < ApplicationController
 
   end
 
+
+  def patientAppointment
+    @mensaje="ID Paciente no especificado"
+    if params[:idPatient]
+      @appointments = Appointment.joins(:tutor).where('patient_id = ?', params[:idPatient])
+
+
+    else
+      render 'mensaje'
+    end
+
+  end
+
+
+
   def counterAppointment
     @countComplete = Appointment.where('"status" =?',"Completada").count
     @countPending=Appointment.where('"status" =?',"Pendiente").count
@@ -58,6 +73,16 @@ class Api::V1::AppointmentsController < ApplicationController
     end
   end
 
+  def updateStatusAppointment
+    @appointment=Appointment.find(params[:id])
+    if @appointment.update(params_status)
+      render json: @appointment, status: :created, location: api_v1_appointment_path(@appointment)
+    else
+      render json: @appointment.errors, status: :unprocessable_entity
+    end
+  end
+
+
   def destroy
     @appointment.destroy
   end
@@ -68,6 +93,10 @@ class Api::V1::AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
   end
 
+
+  def params_status
+    params.require(:appointments).permit(:status)
+  end
   def params_appointment
     params.require(:appointments).permit(:branch_office_id, :patient_id, :tutor_id, :status, :createdBy, appointment_details_attributes:[:id,:vaccine_id,:status,:createdBy])
   end

@@ -5,6 +5,6 @@ json.data do
     json.collaboratorNames @user.colaborador.names
     json.collaboratorSurname @user.colaborador.surname
     json.createdBy @user.createBy
-    json.createdAt @user.created_at
+    json.createdAt @user.created_at.strftime("%d-%m-%Y")
 
 end

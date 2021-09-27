@@ -8,6 +8,6 @@ json.surname p.surname
 json.gender p.gender
 json.birthday p.birthday
 json.createdBy p.createdBy
-json.createdDate p.created_at
+json.createdDate p.created_at.strftime("%d-%m-%Y")
 end
 

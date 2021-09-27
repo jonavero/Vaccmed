@@ -42,6 +42,7 @@ namespace :api do
      resources :tutors
     get '/tutor/dependent' => 'tutors#tutorDepend'
     get '/turn' => 'tutors#turn'
+    get '/tutor/listForName' => 'tutors#index'
 
     #rutas para pacientes
     resources :patients
@@ -63,6 +64,8 @@ namespace :api do
     #post '/appointments' => 'appointments#create'
    get '/appointment/counter' => 'appointments#counterAppointment'
     get '/vaccine/list' => 'appointments#showVaccineList'
+    get 'patient/appointment' => 'appointments#patientAppointment'
+    put '/appointment/status/:id' => 'appointments#updateStatusAppointment', as: :UpdateStatusAppointment
 
   end
 end

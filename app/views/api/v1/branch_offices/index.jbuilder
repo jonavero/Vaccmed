@@ -7,7 +7,7 @@
     json.province b.province
     json.state b.state
     json.status b.status
-    json.createDate b.created_at
+    json.createDate b.created_at.strftime("%d-%m-%Y")
     json.createBy b.createBy
   end
 

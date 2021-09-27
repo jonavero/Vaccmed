@@ -15,3 +15,5 @@ json.data @appointment do |a|
     json.maxAge ad.vaccine.edadMaxima
   end
  end
+
+

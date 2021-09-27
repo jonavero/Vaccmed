@@ -32,6 +32,8 @@ class  Api::V1:: PatientsController < ApplicationController
   end
 
   def vaccineCard
+
+
     @mensaje="ID Paciente no especificado"
 
     if params[:idPatient]

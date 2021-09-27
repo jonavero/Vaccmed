@@ -8,6 +8,6 @@ json.data do
     json.gender @patient.gender
     json.birthday @patient.birthday
     json.createdBy @patient.createdBy
-    json.createdDate @patient.created_at
+    json.createdDate @patient.created_at.strftime("%d-%m-%Y")
 
 end

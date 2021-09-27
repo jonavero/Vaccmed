@@ -12,7 +12,7 @@ json.tutors @tutors do |t|
   json.telephone t.telephone
   json.workTelephone t.workTelephone
   json.address t.address
-  json.createDate t.created_at
+  json.createDate t.created_at.strftime("%d-%m-%Y")
   json.createdBy t.createdBy
 end
 
