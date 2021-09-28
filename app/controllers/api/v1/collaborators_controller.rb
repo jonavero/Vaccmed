@@ -1,6 +1,6 @@
 class Api::V1::CollaboratorsController < ApplicationController
 
-  before_action :authenticate_user, only: [:create,:index,:show,:update]
+#  before_action :authenticate_user, only: [:create,:index,:show,:update]
   before_action :set_collaborator, only: [:show,:update]
 
   def index

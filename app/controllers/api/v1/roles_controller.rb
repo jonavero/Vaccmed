@@ -1,5 +1,5 @@
 class Api::V1::RolesController < ApplicationController
-   before_action :authenticate_user, only: [:create,:index,:show]
+   #before_action :authenticate_user, only: [:create,:index,:show]
    before_action :set_role, only: [:show]
   def index
     @roles = Role.all.order(:id)

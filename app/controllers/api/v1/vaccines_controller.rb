@@ -1,6 +1,6 @@
 class Api::V1::VaccinesController < ApplicationController
 
-  before_action :authenticate_user, only: [:create,:index,:show]
+  #before_action :authenticate_user, only: [:create,:index,:show]
   before_action :set_vaccine, only: [:show,:update,:updateStatus]
 
   def index

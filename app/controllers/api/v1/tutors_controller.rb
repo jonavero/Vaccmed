@@ -1,6 +1,6 @@
 class Api::V1::TutorsController < ApplicationController
   before_action :set_tutor, only: [:show,:update]
-  before_action :authenticate_user, only: [:create,:index,:show,:update,:tutorDepend]
+ # before_action :authenticate_user, only: [:create,:index,:show,:update,:tutorDepend]
   def index
     @tutors= if params[:search]
                       @count =Tutor.where('"name" ILIKE ?',"%#{params[:search]}%").count

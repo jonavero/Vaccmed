@@ -1,5 +1,5 @@
 class Api::V1::BranchOfficesController < ApplicationController
-  before_action :authenticate_user, only: [:create,:index,:show,:update]
+  #before_action :authenticate_user, only: [:create,:index,:show,:update]
   before_action :set_branchOffice, only: [:show,:update]
   def index
     @branchOffices= if params[:search]
