@@ -52,7 +52,7 @@ class Api::V1::CollaboratorsController < ApplicationController
   end
 
   def collaborator_params
-    params.require(:colaboradors).permit(:names,:surname,:status,:email,:address,:branch_office_id,:role_id,:createBy)
+    params.require(:colaboradors).permit(:names,:surname,:status,:email,:address,:centroId,:rolId,:createBy)
   end
 
 end
