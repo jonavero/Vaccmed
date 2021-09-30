@@ -55,6 +55,8 @@ namespace :api do
     get '/patient/tutor' => 'patients#PatientTutor'
     get '/patient/listForName' => 'patients#showForName'
     get 'vaccine/card' =>'patients#vaccineCard'
+    put '/patients' =>'patients#update'
+
 
 
 

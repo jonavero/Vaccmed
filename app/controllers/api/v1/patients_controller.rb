@@ -58,19 +58,29 @@ class  Api::V1:: PatientsController < ApplicationController
 
 
   def update
-    if @patient.update(patients_params)
-      @mensaje='Registro Actualizado'
-      render 'mensaje',status: :created
+
+
+    @mensaje='Id no especificado'
+    if params[:patient][:id]
+      @patient = Patient.where('id=?',params[:patient][:id])
+      if @patient.update(patients_params)
+        @mensaje='Registro Actualizado'
+        render 'mensaje',status: :created
+      else
+        render json: @patient.errors,status: :unprocessable_entity
+      end
     else
-      render json: @patient.errors,status:  :unprocessable_entity
+      render 'mensaje',status: :unprocessable_entity
     end
+
+
   end
 
 
   private
 
   def patients_params
-    params.require(:patient).permit(:name,:surname,:identityCard,:gender,:birthday,:createdBy)
+    params.require(:patient).permit(:id,:name,:surname,:identityCard,:gender,:birthday,:createdBy)
   end
 
   def set_patient
