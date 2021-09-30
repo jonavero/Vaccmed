@@ -31,13 +31,26 @@ class Api::V1::VaccinesController < ApplicationController
   end
 
   def update
+    @mensaje='Id no especificado'
+    if params[:vaccine][:id]
+      @vaccine = Vaccine.where('id=?',params[:vaccine][:id])
     if @vaccine.update(vaccine_params)
       @mensaje='Registro Actualizado'
       render 'mensaje',status: :created
     else
       render json: @vaccine.errors,status: :unprocessable_entity
     end
+    else
+      render 'mensaje',status: :unprocessable_entity
   end
+
+
+
+
+  end
+
+
+
 
   def updateStatus
     if @vaccine.update(status_params)
@@ -55,7 +68,7 @@ class Api::V1::VaccinesController < ApplicationController
   end
 
   def vaccine_params
-    params.require(:vaccine).permit(:name,:description,:status,:dose,:typeDose,:createBy,:minAge,:maxAge)
+    params.require(:vaccine).permit(:id,:name,:description,:status,:dose,:typeDose,:createBy,:minAge,:maxAge)
   end
 
   def status_params
