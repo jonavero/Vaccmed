@@ -30,6 +30,8 @@ namespace :api do
     #rutas para Sucursales
     resources :branch_offices
     get '/branchOffice/list' => 'branch_offices#showByStatus'
+    put '/branch_offices' =>'branch_offices#update'
+
 
     #Rutas para colaboradores
     resources :collaborators

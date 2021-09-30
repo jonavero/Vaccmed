@@ -1,6 +1,6 @@
 class Api::V1::BranchOfficesController < ApplicationController
   #before_action :authenticate_user, only: [:create,:index,:show,:update]
-  before_action :set_branchOffice, only: [:show,:update]
+  before_action :set_branchOffice, only: [:show]
   def index
     @branchOffices= if params[:search]
                       @count =BranchOffice.where('"name" ILIKE ?',"%#{params[:search]}%").count
@@ -33,13 +33,22 @@ class Api::V1::BranchOfficesController < ApplicationController
   end
 
   def update
-    if @branchOffice.update(branchOffice_params)
-      @mensaje='Registro Actualizado'
-      render 'mensaje',status: :created
-    else
 
-      render json: @branchOffice.errors,status: :unprocessable_entity
+    @mensaje='Id no especificado'
+    if params[:branch_office][:id]
+      @center = BranchOffice.where('id=?',params[:branch_office][:id])
+      if @center.update(branchOffice_params)
+        @mensaje='Registro Actualizado'
+        render 'mensaje',status: :created
+      else
+        render json: @center.errors,status: :unprocessable_entity
+      end
+    else
+      render 'mensaje',status: :unprocessable_entity
     end
+
+
+
   end
 
   private
@@ -48,6 +57,6 @@ class Api::V1::BranchOfficesController < ApplicationController
   end
 
   def branchOffice_params
-    params.require(:branch_office).permit(:name,:address,:sector,:province,:state,:status,:createBy)
+    params.require(:branch_office).permit(:id,:name,:address,:sector,:province,:state,:status,:createBy)
   end
 end
