@@ -53,7 +53,7 @@ class Api::V1::TutorsController < ApplicationController
     @mensaje='Id no especificado'
     if params[:tutor][:id]
       @tutor = Tutor.where('id=?',params[:tutor][:id])
-      if @tutor.update(vaccine_params)
+      if @tutor.update(tutors_params)
         @mensaje='Registro Actualizado'
         render 'mensaje',status: :created
       else
