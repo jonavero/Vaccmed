@@ -37,7 +37,7 @@ class  Api::V1:: PatientsController < ApplicationController
     @mensaje="ID Paciente no especificado"
 
     if params[:idPatient]
-      @appointment =Appointment.joins(:patient,:tutor,:appointment_details).where('"patient_id"=?',params[:idPatient]).uniq
+      @appointment =Appointment.joins(:patient,:tutor,:appointment_details).where('"patient_id"=? and appointments.status=?',params[:idPatient],'Realizada').uniq
     else
       render 'mensaje'
     end
