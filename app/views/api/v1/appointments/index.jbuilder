@@ -5,8 +5,8 @@ json.appointments @appointments do |a|
   json.patientName a.patient.name
   json.patientSurname a.patient.surname
   json.patientGender a.patient.gender
-  json.tutorfullname a.tutor.name+" "+a.tutor.surname
-  json.tutorIdentity a.tutor.identityCard
+  json.tutorFullname a.tutor.name+" "+a.tutor.surname
+  json.tutorIdentityCard a.tutor.identityCard
   json.createOn a.created_at.strftime("%d-%m-%Y")
   json.status a.status
   json.listVaccine a.appointment_details do |ad|
