@@ -57,6 +57,6 @@ class Api::V1::BranchOfficesController < ApplicationController
   end
 
   def branchOffice_params
-    params.require(:branch_office).permit(:id,:name,:address,:sector,:province,:status,:createBy)
+    params.require(:branchOffice).permit(:id,:name,:address,:sector,:province,:status,:createBy)
   end
 end
