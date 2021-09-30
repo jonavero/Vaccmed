@@ -35,8 +35,8 @@ class Api::V1::BranchOfficesController < ApplicationController
   def update
 
     @mensaje='Id no especificado'
-    if params[:branch_office][:id]
-      @center = BranchOffice.where('id=?',params[:branch_office][:id])
+    if params[:branchOffice][:id]
+      @center = BranchOffice.where('id=?',params[:branchOffice][:id])
       if @center.update(branchOffice_params)
         @mensaje='Registro Actualizado'
         render 'mensaje',status: :created
