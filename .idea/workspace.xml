@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6cc75a0e-3946-401d-9cb8-a092c649d117" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/appointments_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/appointments_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/api/v1/appointments/index.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/v1/appointments/index.jbuilder" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -85,17 +86,22 @@
       <file leaf-file-name="appointments_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/appointments_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+            <state relative-caret-position="225">
+              <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="counterAppointment.jbuilder" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/api/v1/appointments/counterAppointment.jbuilder">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="index.jbuilder" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/api/v1/appointments/index.jbuilder">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="330">
+              <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -154,11 +160,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20210923170340_add_user_to_tutors.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20210923170340_add_user_to_tutors.rb">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="branch_office.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/branch_office.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -212,7 +213,6 @@
         <option value="$PROJECT_DIR$/app/views/api/v1/patients/showForName.jbuilder" />
         <option value="$PROJECT_DIR$/app/views/api/v1/patients/PatientTutor.jbuilder" />
         <option value="$PROJECT_DIR$/app/views/api/v1/tutors/tutorDepend.jbuilder" />
-        <option value="$PROJECT_DIR$/app/views/api/v1/appointments/index.jbuilder" />
         <option value="$PROJECT_DIR$/app/views/api/v1/appointments/show.jbuilder" />
         <option value="$PROJECT_DIR$/app/views/api/v1/appointments/counterAppointment.jbuilder" />
         <option value="$PROJECT_DIR$/app/models/user_tutor.rb" />
@@ -259,6 +259,7 @@
         <option value="$PROJECT_DIR$/app/models/appointment_detail.rb" />
         <option value="$PROJECT_DIR$/app/controllers/api/v1/patients_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/api/v1/patients/vaccineCard.jbuilder" />
+        <option value="$PROJECT_DIR$/app/views/api/v1/appointments/index.jbuilder" />
         <option value="$PROJECT_DIR$/app/controllers/api/v1/appointments_controller.rb" />
       </list>
     </option>
@@ -342,6 +343,15 @@
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
               <item name="v1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vaccmed" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vaccmed" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="v1" type="462c0819:PsiDirectoryNode" />
+              <item name="appointments" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Vaccmed" type="b2602c69:ProjectViewProjectNode" />
@@ -538,12 +548,12 @@
       <workItem from="1632096462256" duration="50729000" />
       <workItem from="1632414583012" duration="23262000" />
       <workItem from="1632790442290" duration="2578000" />
-      <workItem from="1632803813666" duration="33944000" />
+      <workItem from="1632803813666" duration="34439000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192003000" />
+    <option name="totallyTimeSpent" value="192498000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="-4" width="1859" height="1084" extended-state="6" />
@@ -607,13 +617,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/api/v1/tutors/turn.jbuilder">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/api/v1/patients/index.jbuilder">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -932,15 +935,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/api/v1/appointments/index.jbuilder">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="330">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/api/v1/appointments/counterAppointment.jbuilder">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/appointments_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        <state relative-caret-position="225">
+          <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
         </state>
       </provider>
     </entry>

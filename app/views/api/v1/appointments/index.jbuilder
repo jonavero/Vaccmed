@@ -1,4 +1,4 @@
-json.totalAppointment @count
+json.totalCount @count
 json.appointments @appointments do |a|
   json.id a.id
   json.patientId a.patient.id
