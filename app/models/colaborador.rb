@@ -4,7 +4,7 @@ class Colaborador < ApplicationRecord
   belongs_to :user
 
   alias_attribute :rolId, :role_id
-  alias_attribute :centroId, :rolid
+  alias_attribute :centroId, :branch_office_id
 
 
   VALID_STATUS=['Active','Inactive']
