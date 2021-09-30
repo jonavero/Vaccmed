@@ -1,5 +1,5 @@
 class Api::V1::TutorsController < ApplicationController
-  before_action :set_tutor, only: [:show,:update]
+  before_action :set_tutor, only: [:show]
  # before_action :authenticate_user, only: [:create,:index,:show,:update,:tutorDepend]
   def index
     @tutors= if params[:search]
@@ -49,19 +49,28 @@ class Api::V1::TutorsController < ApplicationController
 
 
   def update
-    if @tutor.update(tutors_params)
-      @mensaje='Registro actualizado'
-      render 'mensaje',status: :created
+
+    @mensaje='Id no especificado'
+    if params[:tutor][:id]
+      @tutor = Tutor.where('id=?',params[:tutor][:id])
+      if @tutor.update(vaccine_params)
+        @mensaje='Registro Actualizado'
+        render 'mensaje',status: :created
+      else
+        render json: @tutor.errors,status: :unprocessable_entity
+      end
     else
-      render json: @tutor.errors,status:  :unprocessable_entity
+      render 'mensaje',status: :unprocessable_entity
     end
+
+
   end
 
 
   private
 
   def tutors_params
-    params.require(:tutor).permit(:name,:surname,:email,:identityCard,:documentType,:phone,:telephone,:workTelephone,:gender,:birthday,:address,:createdBy)
+    params.require(:tutor).permit(:id,:name,:surname,:email,:identityCard,:documentType,:phone,:telephone,:workTelephone,:gender,:birthday,:address,:createdBy)
   end
 
   def set_tutor
