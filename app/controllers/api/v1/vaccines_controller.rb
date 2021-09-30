@@ -55,7 +55,7 @@ class Api::V1::VaccinesController < ApplicationController
   end
 
   def vaccine_params
-    params.require(:vaccine).permit(:name,:description,:status,:dose,:typeDose,:createBy,:edadMinima,:edadMaxima)
+    params.require(:vaccine).permit(:name,:description,:status,:dose,:typeDose,:createBy,:minAge,:maxAge)
   end
 
   def status_params

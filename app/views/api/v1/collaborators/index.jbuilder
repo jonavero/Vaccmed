@@ -1,5 +1,5 @@
 
-json.totalColaborators @count
+json.totalCount @count
  json.collaborators @collaborators do |c|
 json.id c.id
 json.names c.names
