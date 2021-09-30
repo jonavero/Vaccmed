@@ -1,7 +1,7 @@
 class Api::V1::CollaboratorsController < ApplicationController
 
 #  before_action :authenticate_user, only: [:create,:index,:show,:update]
-  before_action :set_collaborator, only: [:show,:update]
+  before_action :set_collaborator, only: [:show]
 
   def index
 
@@ -36,13 +36,23 @@ class Api::V1::CollaboratorsController < ApplicationController
   end
 
   def update
+    @mensaje='Id no especificado'
+    if params[:colaboradors][:id]
+      @collaborator = Colaborador.where('id=?',params[:colaboradors][:id])
+      if @collaborator.update(collaborator_params)
+        @mensaje='Registro Actualizado'
+        render 'mensaje',status: :created
+      else
+        render json: @collaborator.errors,status: :unprocessable_entity
+      end
 
-    if @collaborator.update(collaborator_params)
-      @mensaje='Registro Actualizado'
-      render 'mensaje',status: :created
     else
-      render json: @collaborator.errors,status: :unprocessable_entity
+      render 'mensaje',status: :unprocessable_entity
+
     end
+
+
+
   end
 
   private
@@ -52,7 +62,7 @@ class Api::V1::CollaboratorsController < ApplicationController
   end
 
   def collaborator_params
-    params.require(:colaboradors).permit(:names,:surname,:status,:email,:address,:centroId,:rolId,:createBy)
+    params.require(:colaboradors).permit(:id,:names,:surname,:status,:email,:address,:centroId,:rolId,:createBy)
   end
 
 end

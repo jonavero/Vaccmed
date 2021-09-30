@@ -33,6 +33,7 @@ namespace :api do
 
     #Rutas para colaboradores
     resources :collaborators
+    put '/collaborators' =>'collaborators#update'
 
     #rutas para vacunas
     resources :vaccines
