@@ -126,6 +126,6 @@ class Api::V1::AppointmentsController < ApplicationController
     params.require(:appointments).permit(:status)
   end
   def params_appointment
-    params.require(:appointments).permit(:id,:branch_office_id, :patient_id, :tutor_id, :status, :createdBy, appointment_details_attributes:[:id,:vaccine_id,:status,:createdBy])
+    params.require(:appointments).permit(:id,:branch_office_id, :patient_id, :tutor_id,:appointmentDate, :status, :createdBy, appointment_details_attributes:[:id,:vaccine_id,:status,:createdBy])
   end
 end

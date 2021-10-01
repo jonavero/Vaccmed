@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_30_044747) do
+ActiveRecord::Schema.define(version: 2021_10_01_000607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_09_30_044747) do
     t.datetime "cancelAt"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "appointmentDate"
     t.index ["branch_office_id"], name: "index_appointments_on_branch_office_id"
     t.index ["patient_id"], name: "index_appointments_on_patient_id"
     t.index ["tutor_id"], name: "index_appointments_on_tutor_id"
