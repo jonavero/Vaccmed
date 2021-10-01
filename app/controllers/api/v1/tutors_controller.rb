@@ -38,6 +38,16 @@ class Api::V1::TutorsController < ApplicationController
   end
 
   def create
+
+    @mensaje='Usuario no creado'
+    @user = User.create(:username=>params[:tutor][:name],:email=>params[:tutor][:email],:password=>'Nuevo1234',:password_confirmation=>'Nuevo1234',:createBy=>'jonacas',:role_id=>5)
+    params[:tutor][:user_id]= @user.id
+    if @user.save
+      UserSignupMailer.send_signup_email(@user).deliver
+    else
+      render 'mensaje',status:  :unprocessable_entity
+    end
+
     @tutor= Tutor.new(tutors_params)
     if @tutor.save
       render json: @tutor, status: :created,location: api_v1_tutor_path(@tutor)
@@ -70,7 +80,7 @@ class Api::V1::TutorsController < ApplicationController
   private
 
   def tutors_params
-    params.require(:tutor).permit(:id,:name,:surname,:email,:identityCard,:documentType,:phone,:telephone,:workTelephone,:gender,:birthday,:address,:createdBy)
+    params.require(:tutor).permit(:id,:name,:surname,:email,:identityCard,:documentType,:phone,:telephone,:workTelephone,:gender,:birthday,:address,:createdBy,:user_id)
   end
 
   def set_tutor

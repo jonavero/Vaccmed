@@ -14,6 +14,7 @@ class Api::V1::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @mensaje='Registro Creado'
+      UserSignupMailer.send_signup_email(@user).deliver
       render 'mensaje',status: :created
     else
       render json: @user.errors,status:  :unprocessable_entity
