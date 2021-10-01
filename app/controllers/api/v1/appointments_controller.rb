@@ -87,7 +87,7 @@ class Api::V1::AppointmentsController < ApplicationController
 
     @mensaje='Id no especificado'
     if params[:appointments][:id]
-      @appointment = Patient.where('id=?',params[:appointments][:id])
+      @appointment = Appointment.where('id=?',params[:appointments][:id])
       if @appointment.update(params_appointment)
         @mensaje='Registro Actualizado'
         render 'mensaje',status: :created
@@ -100,6 +100,28 @@ class Api::V1::AppointmentsController < ApplicationController
 
 
   end
+
+
+  def updateGeneral
+
+    @mensaje='Id no especificado'
+    if params[:appointments][:id]
+      @appointment = Appointment.where('id=?',params[:appointments][:id])
+      @detail_appointment = AppointmentDetail.where('appointment_id=?',params[:appointments][:id])
+      @detail_appointment.destroy_all
+          if @appointment.update(params_appointment_general)
+        @mensaje='Registro Actualizado'
+        render 'mensaje',status: :created
+      else
+        render json: @appointment.errors,status: :unprocessable_entity
+      end
+    else
+      render 'mensaje',status: :unprocessable_entity
+    end
+
+
+  end
+
 
   def updateStatusAppointment
     @appointment=Appointment.find(params[:id])
@@ -126,6 +148,11 @@ class Api::V1::AppointmentsController < ApplicationController
     params.require(:appointments).permit(:status)
   end
   def params_appointment
-    params.require(:appointments).permit(:id,:branchOfficeId, :patientId, :tutorId,:appointmentDate, :status, :createdBy, appointmentDetailsAttributes:[:id,:vaccine_id,:status,:createdBy])
+    params.require(:appointments).permit(:id,:branchOfficeId, :patientId, :tutorId,:appointmentDate, :status, :createdBy, appointmentDetailsAttributes:[:id,:vaccineId,:status,:createdBy])
+  end
+
+
+  def params_appointment_general
+    params.require(:appointments).permit(:id,:appointmentDate, appointmentDetailsAttributes:[:id,:vaccineId,:status,:createdBy])
   end
 end

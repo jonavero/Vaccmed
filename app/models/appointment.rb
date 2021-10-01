@@ -9,6 +9,8 @@ class Appointment < ApplicationRecord
   alias_attribute :patientId, :patient_id
   alias_attribute :tutorId, :tutor_id
   alias_attribute :branchOfficeId, :branch_office_id
+  alias_attribute :vaccineId, :vaccine_id
+
   alias_attribute :appointmentDetailsAttributes, :appointment_details_attributes
 
 

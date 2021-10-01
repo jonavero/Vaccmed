@@ -75,6 +75,7 @@ namespace :api do
     get 'patient/appointment' => 'appointments#patientAppointment'
     get '/appointment/tutor' => 'appointments#tutorAppointment'
     put '/appointment/status/:id' => 'appointments#updateStatusAppointment', as: :UpdateStatusAppointment
+    put '/appointment/update' => 'appointments#updateGeneral'
 
   end
 end
