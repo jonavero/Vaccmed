@@ -2,7 +2,7 @@ class Api::V1::RolesController < ApplicationController
    #before_action :authenticate_user, only: [:create,:index,:show]
    before_action :set_role, only: [:show]
   def index
-    @roles = Role.all.order(:id)
+    @roles = Role.where('description !=?',"Tutor").order(:id)
     render json: @roles.as_json(only: %i(id description))
   end
 
