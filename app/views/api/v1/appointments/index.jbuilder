@@ -20,7 +20,7 @@ json.appointments @appointments do |a|
     json.minAge ad.vaccine.edadMinima
     json.maxAge ad.vaccine.edadMaxima
   end
-  json.date a.created_at
+  json.date a.appointmentDate.strftime("%d-%m-%Y")
 
 
 end
