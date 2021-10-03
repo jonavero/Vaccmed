@@ -1,7 +1,7 @@
 class Api::V1::VaccinesController < ApplicationController
 
   #before_action :authenticate_user, only: [:create,:index,:show]
-  before_action :set_vaccine, only: [:show,:updateStatus]
+  before_action :set_vaccine, only: [:updateStatus]
 
   def index
 
@@ -13,6 +13,22 @@ class Api::V1::VaccinesController < ApplicationController
                  @count=Vaccine.count
                  Vaccine.paginate(:page => params[:skip], :per_page => params[:maxCount])
                end
+  end
+
+
+
+
+  def vaccineList
+    if params[:idPatient]
+      @patient= Patient.find_by('id =?',params[:idPatient])
+      @edadMaxima=@patient.birthday.strftime("%Y").to_i / 12
+
+      @vaccines= Vaccine.where('"edadMinima" <= ? and "edadMaxima" <= ? ',@edadMaxima,@edadMaxima)
+
+    else
+      @mensaje='Paciente id no especificado'
+      render 'mensaje',status: :created
+    end
   end
 
   def show

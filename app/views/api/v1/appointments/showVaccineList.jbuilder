@@ -1,5 +1,5 @@
 
- @appointment.each do |a|
+json.data @appointment.each do |a|
   json.listVaccine @detail_appointment =AppointmentDetail.where('"appointment_id"= ?',a.id) do |ad|
     json.id ad.id
     json.vaccineId ad.vaccine.id

@@ -41,6 +41,8 @@ namespace :api do
     resources :vaccines
     put '/vaccines/status/:id' => 'vaccines#updateStatus', as: :UpdateStatus
     put '/vaccines' =>'vaccines#update'
+    get '/list/vaccine' =>'vaccines#vaccineList'
+
 
     # Rutas para Tutores
      resources :tutors
