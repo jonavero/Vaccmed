@@ -53,7 +53,7 @@ class Api::V1::TutorsController < ApplicationController
         render json: @tutor.errors,status:  :unprocessable_entity
       end
     else
-      @mensaje='Correo o username ya existen'
+      @mensaje='Correo ya existen'
       render 'mensaje',status:  :unprocessable_entity
     end
 
