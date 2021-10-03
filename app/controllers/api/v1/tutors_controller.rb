@@ -44,16 +44,18 @@ class Api::V1::TutorsController < ApplicationController
     params[:tutor][:user_id]= @user.id
     if @user.save
       UserSignupMailer.send_signup_email(@user).deliver
+
+
+      @tutor= Tutor.new(tutors_params)
+      if @tutor.save
+        render json: @tutor, status: :created,location: api_v1_tutor_path(@tutor)
+      else
+        render json: @tutor.errors,status:  :unprocessable_entity
+      end
     else
-      render 'mensaje',status:  :unprocessable_entity
+      render json: @user.errors,status:  :unprocessable_entity
     end
 
-    @tutor= Tutor.new(tutors_params)
-    if @tutor.save
-      render json: @tutor, status: :created,location: api_v1_tutor_path(@tutor)
-    else
-      render json: @tutor.errors,status:  :unprocessable_entity
-    end
   end
 
 
