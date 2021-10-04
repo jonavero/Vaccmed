@@ -10,6 +10,22 @@ class Api::V1::DependetsController < ApplicationController
    end
   end
 
+  def update
+    @mensaje='Id no especificado'
+    if params[:dependent][:id]
+      @dependent = Dependent.where('id=?',params[:dependent][:id])
+      if @dependent.update(params_appointment)
+        @mensaje='Registro Actualizado'
+        render 'mensaje',status: :created
+      else
+        render json: @dependent.errors,status: :unprocessable_entity
+      end
+    else
+      render 'mensaje',status: :unprocessable_entity
+    end
+
+  end
+
 
   def delete
     @mensaje='Paciente y tutor tienen citas relacionadas'
