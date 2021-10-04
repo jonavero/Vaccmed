@@ -5,8 +5,8 @@ json.listAppointment @appointments do  |a|
   json.patientSurname a.patient.surname
   json.gender a.patient.gender
   json.status a.status
-  json.date a.created_at.strftime("%d-%m-%Y")
-  json.createOn a.createdBy
+  json.date a.appointmentDate
+  json.createOn a.created_at.strftime("%d-%m-%Y")
   @vaccines = AppointmentDetail.joins(:vaccine).where('appointment_id=?',a.id)
   json.listvaccine @vaccines do |v|
     json.id v.vaccine.id
