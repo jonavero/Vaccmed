@@ -79,6 +79,10 @@ namespace :api do
     put '/appointment/status/:id' => 'appointments#updateStatusAppointment', as: :UpdateStatusAppointment
     put '/appointment/update' => 'appointments#updateGeneral'
 
+
+    #rutas de reportes
+    get '/report/center' => 'reports#reportCenter'
+
   end
 end
 

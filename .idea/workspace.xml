@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6cc75a0e-3946-401d-9cb8-a092c649d117" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/patients/mensajeSucc.jbuilder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/patients_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/patients_controller.rb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/api/v1/reports/mensaje.jbuilder" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/api/v1/reports/reportCenter.jbuilder" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -83,47 +85,65 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="appointments_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/appointments_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="89" column="73" selection-start-line="89" selection-start-column="73" selection-end-line="89" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jbuilder" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/api/v1/appointments/index.jbuilder">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.jbuilder" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/api/v1/relationships/index.jbuilder">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tutors_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/tutors_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="patients_controller.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="patients_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/patients_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="53" column="43" lean-forward="true" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
+            <state relative-caret-position="765">
+              <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="relationships_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/relationships_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reports_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/reports_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="70" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="appointments" pinned="false" current-in-tab="false">
+        <entry file="das://c59dce22-242d-4d68-b309-9ca7896a17fd/database/Vaccmed_development/schema/public/table/appointments">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mensaje.jbuilder" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/api/v1/reports/mensaje.jbuilder">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="21" selection-start-column="21" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reportCenter.jbuilder" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/api/v1/reports/reportCenter.jbuilder">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="537">
+              <caret line="69" column="42" selection-start-line="69" selection-start-column="42" selection-end-line="69" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -141,7 +161,7 @@
         <entry file="file://$PROJECT_DIR$/app/models/patient.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -150,25 +170,7 @@
         <entry file="file://$PROJECT_DIR$/app/views/api/v1/patients/mensaje.jbuilder">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tutor.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/tutor.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="95" selection-start-line="6" selection-start-column="95" selection-end-line="6" selection-end-column="95" />
+              <caret column="21" selection-start-column="21" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -215,8 +217,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/db/migrate/20210923170340_add_user_to_tutors.rb" />
-        <option value="$PROJECT_DIR$/db/migrate/20210923170232_add_user_from_colaboradores.rb" />
         <option value="$PROJECT_DIR$/app/views/api/v1/tutors/turn.jbuilder" />
         <option value="$PROJECT_DIR$/app/views/api/v1/tutors/showForName.jbuilder" />
         <option value="$PROJECT_DIR$/app/views/api/v1/tutors/index.jbuilder" />
@@ -255,7 +255,6 @@
         <option value="$PROJECT_DIR$/app/models/appointment_detail.rb" />
         <option value="$PROJECT_DIR$/app/views/api/v1/appointments/showVaccineList.jbuilder" />
         <option value="$PROJECT_DIR$/app/views/api/v1/vaccines/vaccineList.jbuilder" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/api/v1/vaccines_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/api/v1/appointments_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/api/v1/appointments/index.jbuilder" />
@@ -266,6 +265,9 @@
         <option value="$PROJECT_DIR$/app/models/patient.rb" />
         <option value="$PROJECT_DIR$/app/views/api/v1/patients/mensajeSucc.jbuilder" />
         <option value="$PROJECT_DIR$/app/controllers/api/v1/patients_controller.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/api/v1/reports_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/api/v1/reports/reportCenter.jbuilder" />
       </list>
     </option>
   </component>
@@ -356,7 +358,16 @@
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
               <item name="v1" type="462c0819:PsiDirectoryNode" />
-              <item name="patients" type="462c0819:PsiDirectoryNode" />
+              <item name="relationships" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vaccmed" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vaccmed" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="v1" type="462c0819:PsiDirectoryNode" />
+              <item name="reports" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Vaccmed" type="b2602c69:ProjectViewProjectNode" />
@@ -401,16 +412,16 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/views/api/v1" />
       <recent name="$PROJECT_DIR$/app/controllers/api/v1" />
+      <recent name="$PROJECT_DIR$/app/views/api/v1" />
       <recent name="$PROJECT_DIR$/app/views/api/v1/collaborators" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/views/api/v1/reports" />
       <recent name="$PROJECT_DIR$/app/views/api/v1/patients" />
       <recent name="$PROJECT_DIR$/app/views/api/v1/user_tutors" />
       <recent name="$PROJECT_DIR$/app/views/api/v1/appointments" />
       <recent name="$PROJECT_DIR$/app/views/api/v1/dependets" />
-      <recent name="$PROJECT_DIR$/app/views/api/v1/relationships" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -544,12 +555,12 @@
       <workItem from="1632096462256" duration="50729000" />
       <workItem from="1632414583012" duration="23262000" />
       <workItem from="1632790442290" duration="2578000" />
-      <workItem from="1632803813666" duration="66396000" />
+      <workItem from="1632803813666" duration="68686000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224455000" />
+    <option name="totallyTimeSpent" value="226745000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="-4" width="1859" height="1084" extended-state="6" />
@@ -560,8 +571,9 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.40266395" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1683701" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.40266395" />
+      <window_info anchor="bottom" id="Database Console" order="8" weight="0.32991803" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1683701" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.21839699" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32991803" />
@@ -575,7 +587,6 @@
       <window_info anchor="bottom" id="Messages" order="7" weight="0.33966243" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" order="8" weight="0.32991803" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -613,34 +624,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/api/v1/users/currentTutor.jbuilder">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/dependets_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://c59dce22-242d-4d68-b309-9ca7896a17fd/database/Vaccmed_development/schema/public/table/colaboradors">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/api/v1/collaborators/index.jbuilder">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/vaccine.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -709,13 +692,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/api/v1/appointments/counterAppointment.jbuilder">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://c59dce22-242d-4d68-b309-9ca7896a17fd/database/Vaccmed_development/schema/public/table/appointments">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20211001000607_add_appointment_date_to_appointments.rb">
       <provider selected="true" editor-type-id="text-editor">
@@ -858,13 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-39">
-          <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/appointment.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -917,14 +886,14 @@
     <entry file="file://$PROJECT_DIR$/app/models/patient.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/api/v1/patients/mensaje.jbuilder">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -937,8 +906,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/patients_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="53" column="43" lean-forward="true" selection-start-line="53" selection-start-column="43" selection-end-line="53" selection-end-column="43" />
+        <state relative-caret-position="765">
+          <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/relationships_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="69" column="42" selection-start-line="69" selection-start-column="42" selection-end-line="69" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/api/v1/reports/mensaje.jbuilder">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/reports_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="70" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://c59dce22-242d-4d68-b309-9ca7896a17fd/database/Vaccmed_development/schema/public/table/appointments">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/api/v1/reports/reportCenter.jbuilder">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
         </state>
       </provider>
     </entry>
