@@ -51,7 +51,7 @@ class  Api::V1:: PatientsController < ApplicationController
     @patient= Patient.new(patients_params)
     if @patient.save
       @mensaje='Registro Creado'
-      render 'mensaje',status: :created
+      render 'mensajeSucc',status: :created
     else
       render json: @patient.errors,status:  :unprocessable_entity
     end
