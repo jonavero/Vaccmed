@@ -68,6 +68,7 @@ namespace :api do
 
    #rutas para dependientes
    post '/dependent' => 'dependets#create'
+    delete '/dependent/delete' => 'dependets#delete'
 
     #rutas para Appointment (Citas)
      resources :appointments
