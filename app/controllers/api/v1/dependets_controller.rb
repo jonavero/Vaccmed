@@ -24,7 +24,7 @@ class Api::V1::DependetsController < ApplicationController
       end
     else
       @mensaje='Parametro Paciente y Tutor no especificados'
-      render 'mensaje'
+      render 'mensaje',status: :unprocessable_entity
 
     end
   end
