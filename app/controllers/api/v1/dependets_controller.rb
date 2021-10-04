@@ -12,6 +12,6 @@ class Api::V1::DependetsController < ApplicationController
 
   private
   def depents_params
-    params.require(:dependent).permit(:patient_id,:tutor_id,:relationship_id, :createdBy)
+    params.require(:dependent).permit(:patientId,:tutorId,:relationshipId, :createdBy)
   end
 end
