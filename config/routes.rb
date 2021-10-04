@@ -50,6 +50,7 @@ namespace :api do
     get '/turn' => 'tutors#turn'
     get '/tutor/listForName' => 'tutors#index'
     put '/tutors' =>'tutors#update'
+    get '/tutor/dependent/list' => 'tutors#tutorDepentList'
 
 
     #rutas para pacientes

@@ -16,6 +16,20 @@ class Api::V1::TutorsController < ApplicationController
   end
 
 
+  def tutorDepentList
+    @tutor=Tutor.find_by(:user_id =>params[:userId])
+    @dependents= if params[:search] !=''
+
+               @count =Dependent.where('tutor_id=?',@tutor.id).count
+                Dependent.where('tutor_id=?',@tutor.id).paginate(:page => params[:skip], :per_page => params[:maxCount])
+
+             else
+               @count =Dependent.where('tutor_id=?',@tutor.id).count
+               Dependent.where('tutor_id=?',@tutor.id).paginate(:page => params[:skip], :per_page => params[:maxCount]).order(:id)
+             end
+  end
+
+
 
   def tutorDepend
     @mensaje="ID del tutor no especificado"
