@@ -16,7 +16,7 @@ class Api::V1::DependetsController < ApplicationController
     if params[:idTutor] && params[:idPatient]
       @dependent= Dependent.where('patient_id=? and tutor_id=?',params[:idPatient],params[:idTutor])
       if Appointment.where('patient_id=? and tutor_id=?',params[:idPatient],params[:idTutor]).count >0
-        render 'mensaje'
+        render 'mensaje',status: :unprocessable_entity
       else
         @dependent.destroy_all
         @mensaje='Registro eliminado'
