@@ -21,7 +21,7 @@ class Api::V1::TutorsController < ApplicationController
     @dependents= if params[:search] !=''
 
                @count =Dependent.where('tutor_id=?',@tutor.id).count
-                Dependent.where('tutor_id=?',@tutor.id).paginate(:page => params[:skip], :per_page => params[:maxCount])
+                Dependent.joins(:patient).where('tutor_id=? and patients.name ILIKE ? ',@tutor.id,"%#{params[:search]}%").paginate(:page => params[:skip], :per_page => params[:maxCount])
 
              else
                @count =Dependent.where('tutor_id=?',@tutor.id).count
