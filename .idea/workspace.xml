@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6cc75a0e-3946-401d-9cb8-a092c649d117" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/api/v1/tutors/tutorDepentList.jbuilder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/tutors_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/tutors_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/api/v1/users/current.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/v1/users/current.jbuilder" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/api/v1/users/currentTutor.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/v1/users/currentTutor.jbuilder" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -103,11 +101,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tutors_controller.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tutors_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/tutors_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
               <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="current.jbuilder" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/api/v1/users/current.jbuilder">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="currentTutor.jbuilder" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/api/v1/users/currentTutor.jbuilder">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -117,15 +133,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="patientAppointment.jbuilder" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/api/v1/appointments/patientAppointment.jbuilder">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -199,7 +206,6 @@
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/config/secrets.yml" />
         <option value="$PROJECT_DIR$/Procfile" />
-        <option value="$PROJECT_DIR$/app/views/api/v1/users/currentTutor.jbuilder" />
         <option value="$PROJECT_DIR$/app/models/colaborador.rb" />
         <option value="$PROJECT_DIR$/app/views/api/v1/collaborators/index.jbuilder" />
         <option value="$PROJECT_DIR$/app/controllers/api/v1/collaborators_controller.rb" />
@@ -233,12 +239,13 @@
         <option value="$PROJECT_DIR$/app/controllers/api/v1/reports_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/api/v1/reports/reportCenter.jbuilder" />
         <option value="$PROJECT_DIR$/app/models/dependent.rb" />
-        <option value="$PROJECT_DIR$/app/views/api/v1/users/current.jbuilder" />
         <option value="$PROJECT_DIR$/app/views/api/v1/appointments/patientAppointment.jbuilder" />
         <option value="$PROJECT_DIR$/app/controllers/api/v1/dependets_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/api/v1/tutors/tutorDepentList.jbuilder" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/api/v1/tutors_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/api/v1/users/current.jbuilder" />
+        <option value="$PROJECT_DIR$/app/views/api/v1/users/currentTutor.jbuilder" />
       </list>
     </option>
   </component>
@@ -535,12 +542,12 @@
       <workItem from="1632096462256" duration="50729000" />
       <workItem from="1632414583012" duration="23262000" />
       <workItem from="1632790442290" duration="2578000" />
-      <workItem from="1632803813666" duration="79245000" />
+      <workItem from="1632803813666" duration="80362000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="237304000" />
+    <option name="totallyTimeSpent" value="238421000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="-4" width="1859" height="1084" extended-state="6" />
@@ -604,13 +611,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://c59dce22-242d-4d68-b309-9ca7896a17fd/database/Vaccmed_development/schema/public/table/branch_offices">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20210923170340_add_user_to_tutors.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -846,13 +846,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/api/v1/users/current.jbuilder">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/vaccines_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -932,6 +925,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/api/v1/users/current.jbuilder">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/api/v1/users/currentTutor.jbuilder">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>

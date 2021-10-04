@@ -1,5 +1,5 @@
 json.user do
-  json.id @current.id
+  json.id @current.user.id
   json.username @current.user.username
   json.name @current.names
   json.surname @current.surname
