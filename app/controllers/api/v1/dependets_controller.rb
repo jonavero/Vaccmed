@@ -12,9 +12,9 @@ class Api::V1::DependetsController < ApplicationController
 
   def update
     @mensaje='Id no especificado'
-    if params[:dependent][:id]
-      @dependent = Dependent.where('id=?',params[:dependent][:id])
-      if @dependent.update(params_appointment)
+    if params[:dependent][:patientId] && params[:dependent][:tutorId]
+      @dependent = Dependent.where('patient_id=? and tutor_id=?',params[:dependent][:patientId],params[:dependent][:tutorId])
+      if @dependent.update(depents_params)
         @mensaje='Registro Actualizado'
         render 'mensaje',status: :created
       else
