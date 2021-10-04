@@ -50,7 +50,7 @@ class Api::V1::AppointmentsController < ApplicationController
   def tutorAppointment
     @tutor=Tutor.find_by(:user_id =>params[:userId])
     @mensaje="ID Tutor no especificado"
-      if params[:search] || params[:status]
+      if params[:search] !='' || params[:status] !=''
         @count= Appointment.joins(:tutor,:patient).where('"tutor_id" = ? and "status"=?', @tutor.id,params[:status]).count
 
         @appointments = Appointment.joins(:tutor,:patient).where('"tutor_id" = ? and "status"=?', @tutor.id,params[:status]).paginate(:page => params[:skip], :per_page => params[:maxCount]).order(:id)

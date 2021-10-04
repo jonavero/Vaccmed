@@ -67,8 +67,8 @@
       <file leaf-file-name="appointments_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/appointments_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="56" column="10" lean-forward="true" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+            <state relative-caret-position="382">
+              <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -505,12 +505,12 @@
       <workItem from="1632096462256" duration="50729000" />
       <workItem from="1632414583012" duration="23262000" />
       <workItem from="1632790442290" duration="2578000" />
-      <workItem from="1632803813666" duration="81742000" />
+      <workItem from="1632803813666" duration="82322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239801000" />
+    <option name="totallyTimeSpent" value="240381000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="61" y="-4" width="1859" height="1084" extended-state="6" />
@@ -521,8 +521,8 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.40266395" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1683701" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.40266395" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1683701" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.21839699" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32991803" />
@@ -900,8 +900,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/appointments_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="56" column="10" lean-forward="true" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+        <state relative-caret-position="382">
+          <caret line="62" column="5" lean-forward="true" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
         </state>
       </provider>
     </entry>
