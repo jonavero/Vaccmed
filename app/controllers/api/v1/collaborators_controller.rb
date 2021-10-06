@@ -24,15 +24,30 @@ class Api::V1::CollaboratorsController < ApplicationController
   end
 
   def create
-    @collaborator =Colaborador.new(collaborator_params)
 
-    if @collaborator.save
-      #render json: @collaborator, status: :created,location: api_v1_collaborator_path(@collaborator)
-      @mensaje='Registro Creado'
-      render 'mensaje',status: :created
+
+    @mensaje='Usuario no creado'
+    @user = User.create(:username=>params[:colaboradors][:names]+params[:colaboradors][:surname],:email=>params[:colaboradors][:email],:password=>'Nuevo1234',:password_confirmation=>'Nuevo1234',:createBy=>'jonacas',:role_id=>params[:colaboradors][:rolId])
+    params[:colaboradors][:user_id]= @user.id
+    if @user.save
+      UserSignupMailer.send_signup_email(@user).deliver
+
+
+      @collaborator= Colaborador.new(collaborator_params)
+      if @collaborator.save
+        render json: @collaborator, status: :created
+      else
+        render json: @collaborator.errors,status:  :unprocessable_entity
+      end
     else
-      render json: params.inspect
+      @mensaje='Correo ya existen'
+      render 'mensaje',status:  :unprocessable_entity
     end
+
+
+
+
+
   end
 
   def update
