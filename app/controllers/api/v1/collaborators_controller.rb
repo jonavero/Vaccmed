@@ -28,7 +28,7 @@ class Api::V1::CollaboratorsController < ApplicationController
 
     @mensaje='Usuario no creado'
     @user = User.create(:username=>params[:colaboradors][:names]+params[:colaboradors][:surname],:email=>params[:colaboradors][:email],:password=>'Nuevo1234',:password_confirmation=>'Nuevo1234',:createBy=>'jonacas',:role_id=>params[:colaboradors][:rolId])
-    params[:colaboradors][:user_id]= @user.id
+    params[:colaboradors][:rolId]= @user.id
     if @user.save
       UserSignupMailer.send_signup_email(@user).deliver
 
