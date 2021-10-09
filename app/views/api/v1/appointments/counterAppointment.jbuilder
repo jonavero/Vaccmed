@@ -1,3 +1,4 @@
 json.countComplete @countComplete
 json.countPending  @countPending
-json.time Time.now.strftime("%d-%m-%Y")
+time Time.now.utc - 14400
+json.time time.strftime("%d-%m-%Y")

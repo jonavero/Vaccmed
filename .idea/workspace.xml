@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6cc75a0e-3946-401d-9cb8-a092c649d117" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/app/views/api/v1/appointments/counterAppointment.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/v1/appointments/counterAppointment.jbuilder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/api/v1/appointments/mensaje.jbuilder" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/api/v1/appointments/mensaje.jbuilder" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -104,8 +103,8 @@
       <file leaf-file-name="counterAppointment.jbuilder" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/api/v1/appointments/counterAppointment.jbuilder">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+            <state relative-caret-position="45">
+              <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -567,18 +566,18 @@
       <workItem from="1632414583012" duration="23262000" />
       <workItem from="1632790442290" duration="2578000" />
       <workItem from="1632803813666" duration="90819000" />
-      <workItem from="1633526882154" duration="12933000" />
+      <workItem from="1633526882154" duration="13516000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="261811000" />
+    <option name="totallyTimeSpent" value="262394000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="60" y="-11" width="1861" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18773535" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18773535" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -587,7 +586,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27151638" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27151638" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -982,8 +981,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/api/v1/appointments/counterAppointment.jbuilder">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        <state relative-caret-position="45">
+          <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
         </state>
       </provider>
     </entry>
