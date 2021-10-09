@@ -5,6 +5,6 @@ json.listAppointment @turn do |t|
   json.patientSurname t.patient.surname
   json.birthday t.patient.birthday
   json.status t.status
-  json.dateAppointment t.created_at.strftime("%d-%m-%Y")
+  json.dateAppointment t.appointmentDate.strftime("%d-%m-%Y")
 
 end

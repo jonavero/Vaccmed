@@ -42,10 +42,16 @@ class Api::V1::TutorsController < ApplicationController
   end
 
   def turn
+    time= Time.now.utc - 14400
     @mensaje="Cedula no especificada"
-    if params[:identityCard]
-    @tutor=Tutor.find_by(:identityCard => params[:identityCard])
-    @turn = Appointment.joins(:tutor,:patient).where('tutor_id=? and status=?',@tutor.id,"Pendiente").order(:id)
+    if params[:identityCard] and params[:centerId].present?
+
+    if  @tutor=Tutor.find_by(:identityCard => params[:identityCard])
+     @turn = Appointment.joins(:tutor,:patient).where('tutor_id=? and status=? and branch_office_id=? and "appointmentDate" = ?',@tutor.id,"Pendiente",params[:centerId],time.strftime("%Y-%m-%d")).order(:id)
+    else
+     @mensaje="Cedula no encontrada"
+     render 'mensaje'
+    end
     else
       render 'mensaje'
     end
