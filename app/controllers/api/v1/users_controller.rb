@@ -47,7 +47,7 @@ class Api::V1::UsersController < ApplicationController
         @mensaje='Registro Actualizado'
         render 'mensaje',status: :created
       else
-        render json: @appointment.errors,status: :unprocessable_entity
+        render json: @user.errors,status: :unprocessable_entity
       end
       else
         @mensaje='contraseña actual incorrecta'
