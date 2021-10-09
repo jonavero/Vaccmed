@@ -50,7 +50,7 @@ class Api::V1::UsersController < ApplicationController
         render json: @appointment.errors,status: :unprocessable_entity
       end
       else
-        @mensaje='Contrasena no encontrada'
+        @mensaje='contraseña actual incorrecta'
         render 'mensaje',status: :unprocessable_entity
       end
     else
