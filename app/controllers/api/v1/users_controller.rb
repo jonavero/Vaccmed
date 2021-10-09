@@ -59,6 +59,26 @@ class Api::V1::UsersController < ApplicationController
 
   end
 
+  def changePasswordEmail
+    if params[:user][:email]
+      @user = User.find_by_email(params[:user][:email])
+      @password='123456789'
+     if  @user.update(:password => @password)
+
+       UserSignupMailer.send_password(@user).deliver
+       @mensaje='Clave Enviada'
+       render 'mensaje',status: :created
+     else
+       @mensaje='Clave no enviada'
+       render 'mensaje',status: :unprocessable_entity
+     end
+
+    else
+      @mensaje='email no valido'
+      render 'mensaje',status: :unprocessable_entity
+    end
+  end
+
 
 
   private

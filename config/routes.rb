@@ -16,6 +16,7 @@ namespace :api do
     get '/loginPatient' => 'users#current'
     get '/login' => 'users#current'
     put '/user/changePassword' => 'users#changePassword'
+    put '/user/sendPassword' => 'users#changePasswordEmail'
 
 
     resources :users

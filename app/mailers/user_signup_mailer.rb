@@ -7,4 +7,12 @@ class UserSignupMailer < ApplicationMailer
         :subject => 'Welcome to Vaccmed!'
     )
   end
+
+  def send_password (user)
+    @user = user
+    mail(
+        :to => @user.email,
+        :subject => 'Cambio de contraseña!'
+    )
+  end
 end
