@@ -61,7 +61,7 @@ class Api::V1::UsersController < ApplicationController
 
   def changePasswordEmail
     if params[:user][:email]
-      @user = User.find_by_email(params[:user][:email])
+    if @user = User.find_by_email(params[:user][:email])
       @password='123456789'
      if  @user.update(:password => @password)
 
@@ -77,6 +77,10 @@ class Api::V1::UsersController < ApplicationController
       @mensaje='email no valido'
       render 'mensaje',status: :unprocessable_entity
     end
+    else
+      @mensaje='email no valido'
+      render 'mensaje',status: :unprocessable_entity
+      end
   end
 
 
