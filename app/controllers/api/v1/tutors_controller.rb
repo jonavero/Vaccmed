@@ -36,7 +36,7 @@ class Api::V1::TutorsController < ApplicationController
     @tutorDepend = if params[:id]
                      Dependent.joins(:patient, :tutor).where('"tutor_id" = ?',params[:id] )
                    else
-                  render 'mensaje'
+                  render 'mensaje',
                    end
 
   end
@@ -50,10 +50,10 @@ class Api::V1::TutorsController < ApplicationController
      @turn = Appointment.joins(:tutor,:patient).where('tutor_id=? and status=? and branch_office_id=? and "appointmentDate" = ?',@tutor.id,"Pendiente",params[:centerId],time.strftime("%Y-%m-%d")).order(:id)
     else
      @mensaje="Cedula no encontrada"
-     render 'mensaje'
+     render 'mensaje',status:  :unprocessable_entity
     end
     else
-      render 'mensaje'
+      render 'mensaje',status:  :unprocessable_entity
     end
   end
 
