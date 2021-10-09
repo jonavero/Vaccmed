@@ -121,12 +121,19 @@ class Api::V1::AppointmentsController < ApplicationController
 
 
   def updateStatusAppointment
-    @appointment=Appointment.find(params[:id])
-    if @appointment.update(params_status)
-      render json: @appointment, status: :created, location: api_v1_appointment_path(@appointment)
+    @mensaje='Id no especificado'
+    if params[:appointments][:id]
+      @appointment = Appointment.where('id=?',params[:appointments][:id])
+      if @appointment.update(params_status)
+        @mensaje='Registro Actualizado'
+        render 'mensaje',status: :created
+      else
+        render json: @appointment.errors,status: :unprocessable_entity
+      end
     else
-      render json: @appointment.errors, status: :unprocessable_entity
+      render 'mensaje',status: :unprocessable_entity
     end
+
   end
 
 
@@ -142,7 +149,7 @@ class Api::V1::AppointmentsController < ApplicationController
 
 
   def params_status
-    params.require(:appointments).permit(:status)
+    params.require(:appointments).permit(:id,:status)
   end
   def params_appointment
     params.require(:appointments).permit(:id,:branchOfficeId, :patientId, :tutorId,:appointmentDate, :status, :createdBy, appointmentDetailsAttributes:[:id,:vaccineId,:status,:createdBy])

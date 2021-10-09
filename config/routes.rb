@@ -80,7 +80,7 @@ namespace :api do
     get '/vaccine/list' => 'appointments#showVaccineList'
     get 'patient/appointment' => 'appointments#patientAppointment'
     get '/appointment/tutor' => 'appointments#tutorAppointment'
-    put '/appointment/status/:id' => 'appointments#updateStatusAppointment', as: :UpdateStatusAppointment
+    put '/appointment/status' => 'appointments#updateStatusAppointment'
     put '/appointment/update' => 'appointments#updateGeneral'
 
 
