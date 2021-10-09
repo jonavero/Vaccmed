@@ -1,12 +1,12 @@
 class Api::V1::AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show,:update,:destroy]
   def index
-    @appointments = if params[:status] !=''
-                      @count=  Appointment.joins(:patient,:tutor,:appointment_details ).where('appointments.status = ?' ,params[:status] ).uniq.count
-                      Appointment.joins(:patient,:tutor,:appointment_details ).where('appointments.status = ?',params[:status] ).paginate(:page => params[:skip], :per_page => params[:maxCount]).order(:id).uniq
+    @appointments = if params[:status] !='' && params[:centerId].present?
+                      @count=  Appointment.joins(:patient,:tutor,:appointment_details ).where('appointments.status = ? and branch_office_id=?' ,params[:status],params[:centerId] ).uniq.count
+                      Appointment.joins(:patient,:tutor,:appointment_details ).where('appointments.status = ? and branch_office_id=?',params[:status],params[:centerId]).paginate(:page => params[:skip], :per_page => params[:maxCount]).order(:id).uniq
                     else
-                      @count =Appointment.count
-                      Appointment.paginate(:page => params[:skip], :per_page => params[:maxCount]).order('appointments.id').uniq
+                      @count =Appointment.where('branch_office_id=?',params[:centerId]).count
+                      Appointment.where('branch_office_id=?',params[:centerId]).paginate(:page => params[:skip], :per_page => params[:maxCount]).order('appointments.id').uniq
                     end
   end
 
