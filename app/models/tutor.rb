@@ -2,7 +2,7 @@ class Tutor < ApplicationRecord
 has_many :dependents
 belongs_to :user
   VALIDATE_DOCUMENT =['Cedula','Pasaporte']
-  VALIDATE_GENDER =['Femenina','Masculino']
+  VALIDATE_GENDER =['Femenino','Masculino']
   validates :documentType, inclusion: {in:VALIDATE_DOCUMENT}
   validates :gender,inclusion: {in:VALIDATE_GENDER}
   validates_presence_of :name,:surname,:email,:identityCard,:documentType,:phone,:gender,:birthday,:createdBy
