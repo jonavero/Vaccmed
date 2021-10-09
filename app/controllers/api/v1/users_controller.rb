@@ -72,7 +72,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def password_params
-    params.require(:user).permit(:id,:password,:passwordConfirmation)
+    params.require(:user).permit(:id,:password)
   end
 
 end
