@@ -3,7 +3,7 @@ class Appointment < ApplicationRecord
   belongs_to :patient
   belongs_to :tutor
 
-  VALID_STATUS=['Creada','Pendiente','Realizada']
+  VALID_STATUS=['Creada','Pendiente','Realizada','En proceso']
   validates :status, inclusion: {in:VALID_STATUS}
 
   alias_attribute :patientId, :patient_id

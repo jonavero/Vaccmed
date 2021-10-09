@@ -10,4 +10,9 @@ class  Api::V1::ReportsController < ApplicationController
 
 
   end
+
+  def reportVaccine
+    @reportVaccine = Appointment.joins(:appointment_details).where('appointments.appointmentDate= ? and appointment_details.=?', @tutor.id,params[:status])
+  end
+
 end
