@@ -36,7 +36,7 @@ class Api::V1::TutorsController < ApplicationController
     @tutorDepend = if params[:id]
                      Dependent.joins(:patient, :tutor).where('"tutor_id" = ?',params[:id] )
                    else
-                  render 'mensaje',
+                  render 'mensaje'
                    end
 
   end
