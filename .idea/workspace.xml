@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6cc75a0e-3946-401d-9cb8-a092c649d117" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/collaborators_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/collaborators_controller.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/tutors_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/tutors_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/api/v1/users_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/api/v1/users_controller.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -85,20 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tutors_controller.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tutors_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/tutors_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="55" column="2" selection-start-line="55" selection-start-column="2" selection-end-line="55" selection-end-column="57" />
+            <state relative-caret-position="405">
+              <caret line="57" column="172" selection-start-line="57" selection-start-column="172" selection-end-line="57" selection-end-column="172" />
             </state>
           </provider>
         </entry>
@@ -112,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="collaborators_controller.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="collaborators_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/collaborators_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="35" column="57" lean-forward="true" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+            <state relative-caret-position="315">
+              <caret line="29" column="189" selection-start-line="29" selection-start-column="189" selection-end-line="29" selection-end-column="189" />
             </state>
           </provider>
         </entry>
@@ -254,8 +243,8 @@
         <option value="$PROJECT_DIR$/app/views/user_signup_mailer/send_password.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/api/v1/users_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/api/v1/tutors_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/api/v1/collaborators_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/api/v1/tutors_controller.rb" />
       </list>
     </option>
   </component>
@@ -562,18 +551,18 @@
       <workItem from="1632414583012" duration="23262000" />
       <workItem from="1632790442290" duration="2578000" />
       <workItem from="1632803813666" duration="90819000" />
-      <workItem from="1633526882154" duration="17501000" />
+      <workItem from="1633526882154" duration="18233000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266379000" />
+    <option name="totallyTimeSpent" value="267111000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="60" y="-11" width="1861" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18773535" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18773535" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -582,7 +571,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27151638" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27151638" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -631,13 +620,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/branch_office.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://c59dce22-242d-4d68-b309-9ca7896a17fd/database/Vaccmed_development/schema/public/table/users">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -964,17 +946,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/tutors_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="55" column="2" selection-start-line="55" selection-start-column="2" selection-end-line="55" selection-end-column="57" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/models/colaborador.rb">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/collaborators_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="35" column="57" lean-forward="true" selection-start-line="35" selection-start-column="57" selection-end-line="35" selection-end-column="57" />
+        <state relative-caret-position="315">
+          <caret line="29" column="189" selection-start-line="29" selection-start-column="189" selection-end-line="29" selection-end-column="189" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/v1/tutors_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="57" column="172" selection-start-line="57" selection-start-column="172" selection-end-line="57" selection-end-column="172" />
         </state>
       </provider>
     </entry>

@@ -25,9 +25,9 @@ class Api::V1::CollaboratorsController < ApplicationController
 
   def create
 
-    @password=[*('a'..'z'),*('0'..'9')].shuffle[0,8].join
+    @password=[*('a'..'z'),*('0'..'9')].shuffle[0,9].join
     @mensaje='Usuario no creado'
-    @user = User.create(:username=>params[:colaboradors][:names]+params[:colaboradors][:surname],:email=>params[:colaboradors][:email],:password=>@password,:password_confirmation=>'Nuevo1234',:createBy=>'jonacas',:role_id=>params[:colaboradors][:rolId])
+    @user = User.create(:username=>params[:colaboradors][:names]+params[:colaboradors][:surname],:email=>params[:colaboradors][:email],:password=>@password,:password_confirmation=>@password,:createBy=>'jonacas',:role_id=>params[:colaboradors][:rolId])
     params[:colaboradors][:user_id]= @user.id
     if @user.save
       UserSignupMailer.send_signup_email(@user).deliver
@@ -40,13 +40,9 @@ class Api::V1::CollaboratorsController < ApplicationController
         render json: @collaborator.errors,status:  :unprocessable_entity
       end
     else
-      @mensaje='Correo ya existen'
+      @mensaje='Error en crear colaborador'
       render 'mensaje',status:  :unprocessable_entity
     end
-
-
-
-
 
   end
 
