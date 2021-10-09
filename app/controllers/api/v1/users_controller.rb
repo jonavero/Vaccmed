@@ -25,7 +25,7 @@ class Api::V1::UsersController < ApplicationController
 
     @current_user = User.joins(:role).find_by(:id=> current_user.id)
 
-    if @current_user.role.description == "Collaborator" || @current_user.role.description == "Admin" ||@current_user.role.description == "Nurse"
+    if @current_user.role.description == "Collaborator" || @current_user.role.description == "Admin" ||@current_user.role.description == "Nurse" ||  @current_user.role.description =="Turnero"
       @current= Colaborador.joins(:user).find_by(:user_id => @current_user.id)
     else
       @current= Tutor.joins(:user).find_by(:user_id => @current_user.id)
