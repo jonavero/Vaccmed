@@ -36,6 +36,29 @@ class Api::V1::UsersController < ApplicationController
 
   end
 
+  def changePassword
+    @mensaje='Id no especificado'
+    if params[:user][:id] && params[:user][:passwordOld]
+      @user = User.find_by(:id =>params[:user][:id])
+
+      password_hash =BCrypt::Password.new(@user.password_digest)
+      if password_hash == params[:user][:passwordOld]
+      if @user.update(password_params)
+        @mensaje='Registro Actualizado'
+        render 'mensaje',status: :created
+      else
+        render json: @appointment.errors,status: :unprocessable_entity
+      end
+      else
+        @mensaje='Contrasena no encontrada'
+        render 'mensaje',status: :unprocessable_entity
+      end
+    else
+      render 'mensaje',status: :unprocessable_entity
+    end
+
+  end
+
 
 
   private
@@ -47,4 +70,9 @@ class Api::V1::UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username,:email,:password,:password_confirmation,:createBy,:role_id)
   end
+
+  def password_params
+    params.require(:user).permit(:id,:password,:passwordConfirmation)
+  end
+
 end

@@ -2,6 +2,9 @@ class User < ApplicationRecord
   has_secure_password
 belongs_to :role
 
+
+  alias_attribute :passwordConfirmation, :password_confirmation
+
   before_save :downcase_email
   validates_presence_of :email,:username,:role_id,:createBy
   validates_uniqueness_of :email, :message=> "EL valor insertado ya existe, campo unico correo "
