@@ -65,10 +65,10 @@ class Api::V1::AppointmentsController < ApplicationController
 
 
   def counterAppointment
-
+    time= Time.now.utc - 14400
     if params[:centerID]
-      @countComplete = Appointment.where('status =? and "appointmentDate" = ? and branch_office_id =? ',"Realizada",Time.now.strftime("%d-%m-%Y"),params[:centerID]).count
-      @countPending=Appointment.where('status =? and "appointmentDate" = ? and branch_office_id =? ',"Pendiente",Time.now.strftime("%d-%m-%Y"),params[:centerID]).count
+      @countComplete = Appointment.where('status =? and "appointmentDate" = ? and branch_office_id =? ',"Realizada",time.strftime("%d-%m-%Y"),params[:centerID]).count
+      @countPending=Appointment.where('status =? and "appointmentDate" = ? and branch_office_id =? ',"Pendiente",time.strftime("%d-%m-%Y"),params[:centerID]).count
     else
       @mensaje ='centro no especificado'
       render 'mensaje'
