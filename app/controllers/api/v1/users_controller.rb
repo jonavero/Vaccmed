@@ -62,7 +62,7 @@ class Api::V1::UsersController < ApplicationController
   def changePasswordEmail
     if params[:user][:email]
     if @user = User.find_by_email(params[:user][:email])
-      @password='123456789'
+      @password=[*('a'..'z'),*('0'..'9')].shuffle[0,8].join
      if  @user.update(:password => @password)
 
        UserSignupMailer.send_password(@user).deliver

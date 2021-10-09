@@ -53,8 +53,9 @@ class Api::V1::TutorsController < ApplicationController
 
   def create
 
+    @password=[*('a'..'z'),*('0'..'9')].shuffle[0,8].join
     @mensaje='Usuario no creado'
-    @user = User.create(:username=>params[:tutor][:name]+params[:tutor][:identityCard],:email=>params[:tutor][:email],:password=>'Nuevo1234',:password_confirmation=>'Nuevo1234',:createBy=>'jonacas',:role_id=>5)
+    @user = User.create(:username=>params[:tutor][:name]+params[:tutor][:identityCard],:email=>params[:tutor][:email],:password=>@password,:password_confirmation=>'Nuevo1234',:createBy=>'jonacas',:role_id=>5)
     params[:tutor][:user_id]= @user.id
     if @user.save
       UserSignupMailer.send_signup_email(@user).deliver
