@@ -41,7 +41,7 @@ class  Api::V1:: PatientsController < ApplicationController
       @appointment =Appointment.joins('INNER JOIN "appointment_details"
       ON "appointment_details"."appointment_id" = "appointments"."id"
       Inner join "vaccines"
-      ON  "vaccines".id ="appointment_details"."vaccine_id"').select('"appointments"."appointmentDate","vaccines"."name","appointments"."branch_office_id","appointment_details"."nurseName"').where('"patient_id"=? and appointments.status=?',params[:idPatient],'Realizada')
+      ON  "vaccines".id ="appointment_details"."vaccine_id"').select('"appointments"."appointmentDate","vaccines"."name","appointments"."branch_office_id","appointment_details"."nurseName"').where('"patient_id"=? and appointments.status=?',params[:idPatient],'Realizada').order(appointmentDate: :desc)
 
     else
       render 'mensaje'
