@@ -144,6 +144,27 @@ class Api::V1::AppointmentsController < ApplicationController
   end
 
 
+  def updateDetalleEnfermero
+
+    @mensaje='Id no especificado'
+    if params[:appointments][:id]
+      @appointment = Appointment.where('id=?',params[:appointments][:id])
+      if @appointment.update(params_status)
+        @detalle = AppointmentDetail.where('appointment_id=?',params[:appointments][:id])
+        if @detalle.update(:nurseName => params[:appointments][:nurseName])
+          @mensaje='Registro Actualizado'
+          render 'mensaje',status: :created
+        end
+
+      else
+        render json: @appointment.errors,status: :unprocessable_entity
+      end
+    else
+      render 'mensaje',status: :unprocessable_entity
+    end
+  end
+
+
   def destroy
     @appointment.destroy
   end
@@ -165,5 +186,9 @@ class Api::V1::AppointmentsController < ApplicationController
 
   def params_appointment_general
     params.require(:appointments).permit(:id,:appointmentDate, appointmentDetailsAttributes:[:id,:vaccineId,:status,:createdBy])
+  end
+
+  def params_nurse
+    params.require(:appointment_details).permit(:id,:nurseName)
   end
 end

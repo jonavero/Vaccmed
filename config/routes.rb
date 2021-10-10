@@ -84,6 +84,7 @@ namespace :api do
     get '/appointment/tutor' => 'appointments#tutorAppointment'
     put '/appointment/status' => 'appointments#updateStatusAppointment'
     put '/appointment/update' => 'appointments#updateGeneral'
+    put '/appointment/updateNurse' => 'appointments#updateDetalleEnfermero'
 
 
     #rutas de reportes
