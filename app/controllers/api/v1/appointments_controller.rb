@@ -1,13 +1,18 @@
 class Api::V1::AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:show,:update,:destroy]
   def index
-    @appointments = if params[:status] !='' && params[:centerId].present? && params[:search] !=''
-                      @count=  Appointment.joins(:patient,:tutor,:appointment_details ).where('appointments.status = ? and branch_office_id=? or patients.name  ILIKE ? or "tutors"."identityCard"  ILIKE ?' ,params[:status],params[:centerId],params[:search],params[:search] ).uniq.count
-                      Appointment.joins(:patient,:tutor,:appointment_details ).where('appointments.status = ? and branch_office_id=? or patients.name  ILIKE ? or "tutors"."identityCard" ILIKE ?' ,params[:status],params[:centerId],params[:search],params[:search]).paginate(:page => params[:skip], :per_page => params[:maxCount]).order(:id).uniq
-                    else
-                      @count =Appointment.where('branch_office_id=?',params[:centerId]).count
-                      Appointment.where('branch_office_id=?',params[:centerId]).paginate(:page => params[:skip], :per_page => params[:maxCount]).order('appointments.id').uniq
-                    end
+    if params[:centerId].present? && params[:search] !=''
+      @count=  Appointment.joins(:patient,:tutor,:appointment_details ).where('branch_office_id=? and (patients.name  ILIKE ? or "tutors"."identityCard"  ILIKE ?)' ,params[:centerId],"%#{params[:search]}%","#{params[:search]}%").uniq.count
+      @appointments =   Appointment.joins(:patient,:tutor,:appointment_details ).where('branch_office_id=? and ( patients.name  ILIKE ? or "tutors"."identityCard" ILIKE ?)' ,params[:centerId],"%#{params[:search]}%","#{params[:search]}%").paginate(:page => params[:skip], :per_page => params[:maxCount]).order(:id).uniq
+    elsif params[:status] !='' && params[:centerId].present? && params[:search] !=''
+      @count=  Appointment.joins(:patient,:tutor,:appointment_details ).where('appointments.status = ? and branch_office_id=? and patients.name  ILIKE ? or "tutors"."identityCard"  ILIKE ?' ,params[:status],params[:centerId],"%#{params[:search]}%","%#{params[:search]}%" ).uniq.count
+      @appointments =   Appointment.joins(:patient,:tutor,:appointment_details ).where('appointments.status = ? and branch_office_id=? and patients.name  ILIKE ? or "tutors"."identityCard" ILIKE ?' ,params[:status],params[:centerId],"%#{params[:search]}%","%#{params[:search]}%").paginate(:page => params[:skip], :per_page => params[:maxCount]).order(:id).uniq
+
+    else
+
+      @count =Appointment.where('branch_office_id=?',params[:centerId]).count
+      @appointments =  Appointment.where('branch_office_id=?',params[:centerId]).paginate(:page => params[:skip], :per_page => params[:maxCount]).order('appointments.id').uniq
+    end
   end
 
   def show
