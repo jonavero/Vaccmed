@@ -5,7 +5,12 @@ json.listVaccine @appointment.each do |a|
   json.date a.appointmentDate
   json.name a.name
   json.branchOfficeName a.branch_office.name
-  json.nurseName a.nurseName
+
+  if a.nurseName =="none"
+    json.nurseName ""
+  else
+    json.nurseName a.nurseName
+  end
 
 
 end
