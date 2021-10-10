@@ -9,4 +9,10 @@ belongs_to :user
   validates_uniqueness_of :identityCard, :message=> "EL valor insertado ya existe, campo unico  cedula"
 validates_uniqueness_of :email, :message=> "EL valor insertado ya existe, campo unico correo "
 
+before_save :upcase_identity
+
+def upcase_identity
+  self.identityCard.upcase!
+end
+
 end
