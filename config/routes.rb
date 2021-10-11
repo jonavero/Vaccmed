@@ -90,6 +90,8 @@ namespace :api do
     #rutas de reportes
     get '/report/center' => 'reports#reportCenter'
     get '/report/age' => 'reports#reportAge'
+    get '/report/vaccine' => 'reports#reportVaccine'
+
 
   end
 end
