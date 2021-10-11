@@ -21,9 +21,9 @@ class Api::V1::VaccinesController < ApplicationController
   def vaccineList
     if params[:idPatient]
       @patient= Patient.find_by('id =?',params[:idPatient])
-      @edadMaxima=@patient.birthday.strftime("%Y").to_i / 12
+      edadMaxima=((Date.today - @patient.birthday).to_f / 30).floor
 
-      @vaccines= Vaccine.where('"edadMinima" <= ? and "edadMaxima" <= ? ',@edadMaxima,@edadMaxima)
+      @vaccines= Vaccine.where('"edadMinima" <= ? and "edadMaxima" >= ? ',edadMaxima,edadMaxima)
 
     else
       @mensaje='Paciente id no especificado'
