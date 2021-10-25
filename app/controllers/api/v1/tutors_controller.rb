@@ -49,7 +49,7 @@ class Api::V1::TutorsController < ApplicationController
     if  @tutor=Tutor.find_by(:identityCard => params[:identityCard])
      @turn = Appointment.joins(:tutor,:patient).where('tutor_id=? and status=? and branch_office_id=? and "appointmentDate" = ?',@tutor.id,"Creada",params[:centerId],time.strftime("%Y-%m-%d")).order(:id)
     else
-     @mensaje="Cedula no encontrada"
+     @mensaje="Documento no encontrada"
      render 'mensaje',status:  :unprocessable_entity
     end
     else
