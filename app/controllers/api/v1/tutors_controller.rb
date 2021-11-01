@@ -3,8 +3,8 @@ class Api::V1::TutorsController < ApplicationController
  # before_action :authenticate_user, only: [:create,:index,:show,:update,:tutorDepend]
   def index
     @tutors= if params[:search]
-                      @count =Tutor.where('"name" ILIKE ?',"%#{params[:search]}%").count
-                      Tutor.where('"name" ILIKE ?',"%#{params[:search]}%").paginate(:page => params[:skip], :per_page => params[:maxCount])
+                      @count =Tutor.where('"name" ILIKE ? or "identityCard" ILIKE ?',"%#{params[:search]}%","%#{params[:search]}%").count
+                      Tutor.where('"name" ILIKE ? or ILIKE ?',"%#{params[:search]}%","%#{params[:search]}%").paginate(:page => params[:skip], :per_page => params[:maxCount])
                     else
                       @count =Tutor.count
                       Tutor.paginate(:page => params[:skip], :per_page => params[:maxCount]).order(:id)
